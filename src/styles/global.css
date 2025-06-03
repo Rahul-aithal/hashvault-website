@@ -1,2 +1,10 @@
 @import "tailwindcss";
 @plugin '@tailwindcss/typography';
+
+@theme {
+  --font-brutal: 'Archivo Black', 'sans-serif';
+  --font-mono: 'Geist Mono Variable', 'monospace';
+
+  --color-hash-black: oklch(0.1536 0.0071 314.6);
+  --color-hash-purple: oklch(0.9148 0.056 311.05);
+}

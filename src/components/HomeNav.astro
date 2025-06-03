@@ -1,0 +1,78 @@
+<div class="flex gap-4 justify-between backdrop-blur-xs">
+  <div class="font-brutal font-black text-md py-4 px-5 w-full">
+    <ul class="grid grid-flow-col grid-rows-3 gap-1 content-center">
+      <a class="hover:opacity-75 transition duration-100 w-fit" href="/about"
+        >/ABOUT-US</a
+      >
+      <a class="hover:opacity-75 transition duration-100 w-fit" href="/events"
+        >/EVENTS</a
+      >
+      <a
+        class="hover:opacity-75 transition duration-100 w-fit"
+        href="/departments">/DEPARTMENTS</a
+      >
+      <a
+        class="hover:opacity-75 transition duration-100 w-fit"
+        href="/resources">/RESOURCES</a
+      >
+      <a
+        class="hover:opacity-75 transition duration-100 w-fit"
+        href="/hall-of-fame">/HALL-OF-FAME</a
+      >
+      <a class="hover:opacity-75 transition duration-100 w-fit" href="/contact"
+        >/CONTACT</a
+      >
+    </ul>
+  </div>
+
+  <div class="border-hash-purple border-l-2 px-5 py-4 min-w-3xl">
+    <div class="w-full grid grid-rows-1 align-top gap-4">
+      <div class="flex items-center gap-2 h-fit overflow-hidden">
+        <h3 class="font-brutal text-sm whitespace-nowrap">LATEST UPDATES</h3>
+        <div
+          class="flex-1 font-brutal font-black text-sm tracking-wider overflow-hidden"
+        >
+          <div class="slash-fill" id="slashFill">/</div>
+        </div>
+      </div>
+
+      <div class="flex gap-2">
+        <div class="border-1 border-hash-purple p-2">
+          <p class="font-mono text-xs hyphens-auto text-justify text-clip">
+            Leaked Credentials Surge on Dark Web After Major Breach
+          </p>
+        </div>
+        <div class="border-1 border-hash-purple p-2">
+          <p class="font-mono text-xs hyphens-auto text-justify text-clip">
+            AI-Powered Phishing Kits Are on the Rise
+          </p>
+        </div>
+        <div class="border-1 border-hash-purple p-2 w-fit">
+          <p class="font-mono text-xs hyphens-auto text-justify text-clip">
+            Zero-Day in the Wild: New Windows Exploit Surfaces
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function updateSlashFill() {
+    const element = document.getElementById("slashFill");
+    if (!element) return;
+
+    const container = element.parentElement;
+    if (!container) return;
+    const containerWidth = container.offsetWidth;
+    const charWidth = 4.6;
+    const slashCount = Math.floor(containerWidth / charWidth);
+
+    if (slashCount > 0) {
+      element.textContent = "/".repeat(slashCount);
+    }
+  }
+
+  updateSlashFill();
+  window.addEventListener("resize", updateSlashFill);
+</script>
