@@ -1,3 +1,7 @@
+---
+import HashFill from "./HashFill.astro";
+---
+
 <div class="flex gap-4 justify-between backdrop-blur-xs">
   <div class="font-brutal font-black text-md py-4 px-5 w-full">
     <ul class="grid grid-flow-col grid-rows-3 gap-1 content-center">
@@ -29,11 +33,7 @@
     <div class="w-full grid grid-rows-1 align-top gap-4">
       <div class="flex items-center gap-2 h-fit overflow-hidden">
         <h3 class="font-brutal text-sm whitespace-nowrap">LATEST UPDATES</h3>
-        <div
-          class="flex-1 font-brutal font-black text-sm tracking-wider overflow-hidden"
-        >
-          <div class="slash-fill" id="slashFill">/</div>
-        </div>
+        <HashFill client:load />
       </div>
 
       <div class="flex gap-2">
@@ -56,23 +56,3 @@
     </div>
   </div>
 </div>
-
-<script>
-  function updateSlashFill() {
-    const element = document.getElementById("slashFill");
-    if (!element) return;
-
-    const container = element.parentElement;
-    if (!container) return;
-    const containerWidth = container.offsetWidth;
-    const charWidth = 4.6;
-    const slashCount = Math.floor(containerWidth / charWidth);
-
-    if (slashCount > 0) {
-      element.textContent = "/".repeat(slashCount);
-    }
-  }
-
-  updateSlashFill();
-  window.addEventListener("resize", updateSlashFill);
-</script>
