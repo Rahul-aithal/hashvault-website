@@ -1,5 +1,9 @@
+---
+const { textSize } = Astro.props
+---
+
 <div
-  class="flex-1 font-brutal font-black text-sm tracking-wider overflow-hidden"
+  class=`flex-1 font-brutal font-black ${textSize} tracking-wider overflow-hidden`
 >
   <div class="slashFill whitespace-nowrap leading-none">/</div>
 </div>
@@ -34,6 +38,12 @@
     });
   }
 
-  updateSlashFills();
-  window.addEventListener("resize", updateSlashFills);
+  // Wait until custom elements are rendered
+  window.addEventListener("DOMContentLoaded", () => {
+    // Give the browser a frame to finish replacing <slash-fill> elements
+    requestAnimationFrame(() => {
+      updateSlashFills();
+      window.addEventListener("resize", updateSlashFills);
+    });
+  });
 </script>

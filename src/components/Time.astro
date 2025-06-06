@@ -1,16 +1,21 @@
 ---
-const id = `time-${Math.random().toString(36).slice(2)}`;
+const { className } = Astro.props
 ---
 
-<div id="clock" class="font-mono text-xl font-bold"></div>
+<div id="clock" class=`${className}`></div>
 
 <script type="module">
-    const clockEl = document.getElementById("clock");
-    function updateTime() {
-        const now = new Date();
-        clockEl.textContent = now.toLocaleTimeString(); // e.g. 10:30:45 PM
-    }
+  const clockEl = document.getElementById("clock");
+  function updateTime() {
+    const now = new Date();
+    clockEl.textContent = now.toLocaleTimeString(undefined, {
+      hour12: false,
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+    });
+  }
 
-    updateTime();
-    setInterval(updateTime, 1000);
+  updateTime();
+  setInterval(updateTime, 1000);
 </script>

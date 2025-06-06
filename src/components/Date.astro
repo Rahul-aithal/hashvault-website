@@ -1,4 +1,8 @@
-<div id="date" class="font-mono text-xl font-bold"></div>
+---
+const { className } = Astro.props
+---
+
+<span id="date" class=`${className}`></span>
 
 <script type="module">
   const dateEl = document.getElementById("date");
