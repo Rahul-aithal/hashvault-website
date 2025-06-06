@@ -1,35 +1,49 @@
+---
+const { textSize } = Astro.props
+---
+
 <div
-  class="flex-1 font-brutal font-black text-sm tracking-wider overflow-hidden"
+  class=`flex-1 font-brutal font-black ${textSize} tracking-wider overflow-hidden`
 >
-  <div id="slashFill" class="whitespace-nowrap leading-none">/</div>
+  <div class="slashFill whitespace-nowrap leading-none">/</div>
 </div>
 
 
+
 <script>
-  function updateSlashFill() {
-    const element = document.getElementById("slashFill");
-    const container = element?.parentElement;
-    if (!element || !container) return;
+  function updateSlashFills() {
+    const elements = document.querySelectorAll(".slashFill");
 
-    const containerWidth = container.offsetWidth;
+    elements.forEach((element) => {
+      const container = element?.parentElement;
+      if (!element || !container) return;
 
-    // Use font measurement instead of fixed char width
-    const testChar = document.createElement("span");
-    testChar.textContent = "/";
-    testChar.style.visibility = "hidden";
-    testChar.style.position = "absolute";
-    testChar.style.whiteSpace = "nowrap";
-    testChar.style.fontFamily = getComputedStyle(element).fontFamily;
-    testChar.style.fontSize = getComputedStyle(element).fontSize;
-    container.appendChild(testChar);
+      const containerWidth = container.offsetWidth;
 
-    const charWidth = testChar.offsetWidth;
-    container.removeChild(testChar);
+      // Use font measurement instead of fixed char width
+      const testChar = document.createElement("span");
+      testChar.textContent = "/";
+      testChar.style.visibility = "hidden";
+      testChar.style.position = "absolute";
+      testChar.style.whiteSpace = "nowrap";
+      testChar.style.fontFamily = getComputedStyle(element).fontFamily;
+      testChar.style.fontSize = getComputedStyle(element).fontSize;
+      container.appendChild(testChar);
 
-    const slashCount = Math.floor(containerWidth / charWidth);
-    element.textContent = "/".repeat(slashCount);
+      const charWidth = testChar.getBoundingClientRect().width;
+      container.removeChild(testChar);
+
+      const slashCount = Math.floor(containerWidth / charWidth);
+      element.textContent = "/".repeat(slashCount);
+    });
   }
 
-  updateSlashFill();
-  window.addEventListener("resize", updateSlashFill);
+  // Wait until custom elements are rendered
+  window.addEventListener("DOMContentLoaded", () => {
+    // Give the browser a frame to finish replacing <slash-fill> elements
+    requestAnimationFrame(() => {
+      updateSlashFills();
+      window.addEventListener("resize", updateSlashFills);
+    });
+  });
 </script>
