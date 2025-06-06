@@ -1,24 +1,41 @@
 ---
 import HashFill from "./HashFill.astro";
+import Date from "./Date.astro";
+import Time from "./Time.astro";
 ---
 
-<div class="h-28 w-full backdrop-blur-xs flex items-start">
-    <div class="border-hash-purple h-full border-r-2 px-5 py-4 pl-[5.5rem] min-w-3xl -ml-20 flex flex-col gap-2 overflow-hidden">
-        <h3 class="font-brutal text-sm whitespace-nowrap">WHO WE ARE </h3>
-
-       <div class="flex items-start pr-4 pb-4 max-w-2xl leading-relaxed">
-        <p class="font-mono text-xs hyphens-auto text-justify overflow-hidden">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-        </div>
-   </div>  
-    </div>  
-
-    <div class="border-hash-purple border-r-2 h-28 w-1 absolute bottom-4.5" style="left: calc(min(100%, 768px) + 250px);"></div>
-    <div>
-        
+<div class="h-28 w-full backdrop-blur-xs flex items-start relative">
+  <div class="border-hash-purple h-full border-r-2 px-5 py-4 flex flex-col gap-2 overflow-hidden">
+    <div class="w-full flex items-center gap-2">
+      <h3 class="font-brutal text-sm whitespace-nowrap">WHO WE ARE</h3>
+      <HashFill />
     </div>
-    <div></div>
+
+    <div class="flex flex-col items-start max-w-2xl">
+      <p class="font-mono text-xs hyphens-auto text-justify">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </div>
+  </div>
+
+  <!-- <div
+    class="border-hash-purple border-r-2 h-28 w-1 absolute bottom-0"
+    style="left: calc(min(100%, 768px) + 230px);">
+  </div> -->
+  
+
+  <div class="border-r-2 border-hash-purple ">
+    <div class="border-hash-purple px-5 py-4 flex flex-col gap-2 overflow-hidden">
+      <div class="w-full flex items-center gap-2">
+        <h3 class="font-brutal text-xs whitespace-nowrap">DATE</h3>
+        <HashFill />
       </div>
-</div>
+      <Date/>
+    </div>
+
+    <div>
+      <Time/>
+    </div>
+
+  </div>
 </div>

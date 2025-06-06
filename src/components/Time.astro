@@ -1,0 +1,16 @@
+---
+const id = `time-${Math.random().toString(36).slice(2)}`;
+---
+
+<div id="clock" class="font-mono text-xl font-bold"></div>
+
+<script type="module">
+    const clockEl = document.getElementById("clock");
+    function updateTime() {
+        const now = new Date();
+        clockEl.textContent = now.toLocaleTimeString(); // e.g. 10:30:45 PM
+    }
+
+    updateTime();
+    setInterval(updateTime, 1000);
+</script>
