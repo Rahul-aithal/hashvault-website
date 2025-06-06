@@ -1,0 +1,29 @@
+---
+const { value = "RAHUL987654321" } = Astro.props;
+---
+
+<svg id="barcode"></svg>
+
+<!-- Load JsBarcode from CDN -->
+<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js" is:inline></script>
+
+<style>
+  svg#barcode {
+    background-color: transparent;
+    padding: 4px;
+  }
+</style>
+
+<script is:inline>
+  window.addEventListener("DOMContentLoaded", () => {
+    JsBarcode("#barcode", "{value}", {
+      format: "CODE128",
+      lineColor: "#EFD9FF",   // Pink bar color
+      background: "transparent", // Transparent background
+      width: 2,
+      height: 80,
+      displayValue: false,
+      margin: 0
+    });
+  });
+</script>
