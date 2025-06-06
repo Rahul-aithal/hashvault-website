@@ -2,14 +2,13 @@
 import HashFill from "./HashFill.astro";
 import Date from "./Date.astro";
 import Time from "./Time.astro";
-import { Icon } from 'astro-icon/components';
-import { Image } from 'astro:assets';
-import barcode from '../assets/barcode.png';
+// import { Icon } from 'astro-icon/components';
+import Globe from "../icons/globe.svg";
+import { Image } from "astro:assets";
+import Barcode from "./Barcode.astro";
 ---
 
-<div
-  class="h-28 w-full backdrop-blur-xs bg-hash-black/30 flex items-start"
->
+<div class="h-28 w-full backdrop-blur-xs bg-hash-black/30 flex items-start">
   <div
     class="border-hash-purple h-full border-r-2 px-3 py-2 flex max-w-3xl flex-col gap-1 overflow-hidden"
   >
@@ -55,22 +54,26 @@ import barcode from '../assets/barcode.png';
   </div>
 
   <div class="h-full p-2 flex justify-center items-center border-r-2">
-    <Icon size="96" name="globe"/>
+    <Globe class="h-full w-auto" />
   </div>
 
-  <div class="h-full p-2 flex justify-center items-center">
-    <div class="flex flex-col gap-1">
-        <div class="w-full flex items-center gap-2">
-            <h3 class="font-brutal text-xs whitespace-nowrap">DEFEND THE DIGITAL REALM</h3>
-            <HashFill textSize="text-xs" />
-        </div>
-        <div>
-            <Image height={70} src={barcode} alt="Barcode" />
-        </div>
-        <div class="w-full flex items-center gap-2">
-            <HashFill textSize="text-xs" />
-            <h3 class="font-brutal text-xs whitespace-nowrap">HASHVAULT</h3>
-        </div>
+  <div class="h-full w-full p-2 flex overflow-hidden">
+    <div class="flex flex-col gap-1 w-full  justify-center items-center">
+
+      <div class="w-full flex items-center gap-2">
+        <h3 class="font-brutal text-xs whitespace-nowrap">
+          DEFEND THE DIGITAL REALM
+        </h3>
+        <HashFill textSize="text-xs" />
+      </div>
+
+      <Barcode value="ctf{W3_4R3_H45HVAU7T}" />
+
+      <div class="w-full flex items-center gap1">
+        <HashFill textSize="text-xs" />
+        <h3 class="font-brutal text-xs whitespace-nowrap">HASHVAULT</h3>
+      </div>
+  
     </div>
   </div>
 </div>
