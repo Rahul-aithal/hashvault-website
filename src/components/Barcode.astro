@@ -1,29 +1,37 @@
 ---
-const { value = "RAHUL987654321" } = Astro.props;
+const { value = "RAHUL987654321", color = "#EFD9FF" } = Astro.props;
+const barcodeId = `barcode-${value}`;
 ---
 
-<svg id="barcode"></svg>
+<svg id={barcodeId}></svg>
 
-<!-- Load JsBarcode from CDN -->
 <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js" is:inline></script>
 
 <style>
-  svg#barcode {
+  svg[id^="barcode-"] {
     background-color: transparent;
     padding: 4px;
   }
 </style>
 
-<script is:inline>
+<script is:inline define:vars={{ barcodeId, value, color }}>
   window.addEventListener("DOMContentLoaded", () => {
-    JsBarcode("#barcode", "{value}", {
-      format: "CODE128",
-      lineColor: "#EFD9FF",   // Pink bar color
-      background: "transparent", // Transparent background
-      width: 2,
-      height: 80,
-      displayValue: false,
-      margin: 0
+    const el = document.getElementById(barcodeId);
+    console.log("barcodeId:", JSON.stringify(barcodeId));
+    console.log("value:", JSON.stringify(value));
+    console.log("color:", JSON.stringify(color));
+    if (!el) return;
+
+    requestAnimationFrame(() => {
+      JsBarcode(el, value, {
+        format: "CODE128",
+        lineColor: color,
+        background: "transparent",
+        width: 2,
+        height: 80,
+        displayValue: false,
+        margin: 0,
+      });
     });
   });
 </script>
