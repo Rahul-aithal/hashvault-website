@@ -3,7 +3,7 @@ const { textSize } = Astro.props;
 ---
 
 <div
-  class=`flex-1 font-brutal font-black ${textSize} tracking-wider overflow-hidden`
+  class=`flex-1 font-brutal font-black ${textSize} tracking-wider overflow-hidden min-w-0`
 >
   <div class="slashFill leading-none whitespace-nowrap">/</div>
 </div>
@@ -16,13 +16,13 @@ const { textSize } = Astro.props;
       const container = element?.parentElement;
       if (!element || !container) return;
 
-      // First, clear the content to get the true available width
+      // Temporarily clear text to measure true container width
+      const originalText = element.textContent;
       element.textContent = "";
 
-      // Now get the available width without the slash content
       const availableWidth = container.offsetWidth;
 
-      // Use font measurement for accurate character width
+      // Measure single character width
       const testChar = document.createElement("span");
       testChar.textContent = "/";
       testChar.style.visibility = "hidden";
@@ -38,17 +38,25 @@ const { textSize } = Astro.props;
       container.removeChild(testChar);
 
       const slashCount = Math.floor(availableWidth / charWidth);
-
-      // Set the content to the calculated amount
       element.textContent = "/".repeat(Math.max(1, slashCount));
     });
   }
 
-  // Wait until DOM is ready
+  // On load + resize
   document.addEventListener("DOMContentLoaded", () => {
-    requestAnimationFrame(() => {
+    const elements = document.querySelectorAll(".slashFill");
+
+    elements.forEach((element) => {
+      const container = element.parentElement;
+
       updateSlashFills();
-      window.addEventListener("resize", updateSlashFills);
+
+      if (container) {
+        const observer = new ResizeObserver(updateSlashFills);
+        observer.observe(container);
+      }
     });
+
+    window.addEventListener("resize", updateSlashFills);
   });
 </script>
