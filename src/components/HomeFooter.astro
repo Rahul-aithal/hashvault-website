@@ -10,7 +10,7 @@ import Barcode from "./Barcode.astro";
 
 <div class="h-28 w-full backdrop-blur-xs bg-hash-black/30 flex items-start">
   <div
-    class="border-hash-purple h-full border-r-2 px-3 py-2 flex max-w-3xl flex-col gap-1 overflow-hidden"
+    class="border-hash-purple h-full md:border-r-2 px-3 py-2 flex max-w-3xl flex-col gap-1 overflow-hidden"
   >
     <div class="w-full flex items-center gap-2">
       <h3 class="font-brutal text-xs whitespace-nowrap">WHO WE ARE</h3>
@@ -31,7 +31,7 @@ import Barcode from "./Barcode.astro";
     style="left: calc(min(100%, 768px) + 230px);">
   </div> -->
 
-  <div class="border-r-2 border-hash-purple min-w-48">
+  <div class="hidden md:block border-r-2 border-hash-purple min-w-48">
     <div
       class="border-hash-purple px-3 border-b-1 py-2 flex flex-col overflow-hidden"
     >
@@ -53,13 +53,12 @@ import Barcode from "./Barcode.astro";
     </div>
   </div>
 
-  <div class="h-full p-2 flex justify-center items-center border-r-2">
+  <div class="hidden h-full p-2 md:flex justify-center items-center border-r-2">
     <Globe class="h-full w-auto" />
   </div>
 
-  <div class="h-full w-full p-2 flex overflow-hidden">
-    <div class="flex flex-col gap-1 w-full  justify-center items-center">
-
+  <div class="hidden h-full w-full p-2 xl:flex overflow-hidden">
+    <div class="flex flex-col gap-1 w-full justify-center items-center">
       <div class="w-full flex items-center gap-2">
         <h3 class="font-brutal text-xs whitespace-nowrap">
           DEFEND THE DIGITAL REALM
@@ -73,7 +72,6 @@ import Barcode from "./Barcode.astro";
         <HashFill textSize="text-xs" />
         <h3 class="font-brutal text-xs whitespace-nowrap">HASHVAULT</h3>
       </div>
-  
     </div>
   </div>
 </div>
