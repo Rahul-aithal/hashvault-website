@@ -1,6 +1,14 @@
 <div
-  class="border-hash-purple flex h-full grow flex-col justify-center overflow-hidden border-t-2 border-b-2"
+  class="border-hash-purple relative flex h-full grow flex-col justify-center overflow-hidden border-t-2 border-b-2"
 >
+  <div
+    class="pointer-events-none absolute inset-0 hidden md:grid md:grid-cols-3"
+  >
+    <div class="relative"></div>
+    <div class="relative border-r-2 border-l-2"></div>
+    <div class="relative"></div>
+  </div>
+
   <div
     class="grid-row-3 bg-hash-black/30 font-brutal glass-noise mt-6 grid text-center text-2xl font-black backdrop-blur-sm backdrop-saturate-150 md:mt-0 md:grid-cols-3"
   >
@@ -9,7 +17,7 @@
       href="/join-us"
     >
       <div
-        class="border-hash-purple hover:drop-shadow-[0px_0px_30px_theme(colors.hash-purple)] relative border-t-2 border-b-1 py-6 hover:border-r-2 active:border-r-0 active:drop-shadow-none md:border-b-2 md:py-[22%]"
+        class="border-hash-purple hover:drop-shadow-[0px_0px_30px_theme(colors.hash-purple)] relative border-t-2 border-dashed py-6 hover:border-r-2 hover:border-solid active:border-r-0 active:drop-shadow-none md:border-b-2 md:py-[22%]"
       >
         JOIN US
       </div>
@@ -20,7 +28,7 @@
       href="/get-started"
     >
       <div
-        class="border-hash-purple hover:drop-shadow-[0px_0px_30px_theme(colors.hash-purple)] relative border-t-1 border-b-1 py-6 active:drop-shadow-none md:border-2 md:py-[22%]"
+        class="border-hash-purple hover:drop-shadow-[0px_0px_30px_theme(colors.hash-purple)] relative border-t-2 border-b-2 border-dashed py-6 hover:border-solid active:drop-shadow-none md:border-2 md:py-[22%]"
       >
         GET STARTED
       </div>
@@ -31,7 +39,7 @@
       href="/explore"
     >
       <div
-        class="border-hash-purple hover:drop-shadow-[0px_0px_30px_theme(colors.hash-purple)] relative border-t-1 border-b-2 py-6 hover:border-l-2 active:border-l-0 active:drop-shadow-none md:border-t-2 md:py-[22%]"
+        class="border-hash-purple hover:drop-shadow-[0px_0px_30px_theme(colors.hash-purple)] relative border-b-2 border-dashed py-6 hover:border-l-2 hover:border-solid active:border-l-0 active:drop-shadow-none md:border-t-2 md:py-[22%]"
       >
         EXPLORE
       </div>

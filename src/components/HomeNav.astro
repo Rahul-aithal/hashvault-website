@@ -3,7 +3,7 @@ import HashFill from "./HashFill.astro";
 ---
 
 <nav
-  class="bg-hash-black/30 z-[60] flex flex-col items-center justify-between leading-none backdrop-blur-xs xl:h-30 xl:flex-row"
+  class="bg-hash-black/30 divide-hash-purple z-[60] flex flex-col items-center justify-between divide-y-2 leading-none backdrop-blur-xs xl:h-30 xl:flex-row xl:divide-x-2 xl:divide-y-0"
 >
   <!-- Hyperlinks -->
   <div
@@ -88,9 +88,7 @@ import HashFill from "./HashFill.astro";
   </div>
 
   <!-- Latest Updates -->
-  <div
-    class="border-hash-purple w-full border-t-2 px-3 pt-2 pb-3 xl:border-t-0 xl:border-l-2 xl:px-5 xl:py-4"
-  >
+  <div class="w-full px-3 pt-2 pb-3 xl:px-5 xl:py-4">
     <div class="grid w-full grid-rows-1 gap-1 align-top xl:gap-4">
       <div class="flex h-fit items-center gap-2 overflow-hidden">
         <h3 class="font-brutal text-sm whitespace-nowrap">LATEST UPDATES</h3>
@@ -98,10 +96,10 @@ import HashFill from "./HashFill.astro";
       </div>
 
       <div
-        class="scrollbar scrollbar-thumb-transparent scrollbar-track-transparent flex snap-x gap-2 overflow-x-auto md:overflow-x-visible"
+        class="scrollbar scrollbar-thumb-transparent scrollbar-track-transparent flex snap-x md:items-center md:mx-auto gap-2 overflow-x-auto md:overflow-x-visible"
       >
         <a
-          class="bg-hash-black/30 w-fit min-w-3xs snap-center backdrop-blur-xl transition duration-100 hover:scale-[99%] hover:opacity-75 md:min-w-0"
+          class="bg-hash-black/30 w-full min-w-3xs snap-center backdrop-blur-xl transition duration-100 hover:scale-[99%] hover:opacity-75 md:min-w-0 xl:w-fit"
           href="/blog"
         >
           <div class="border-hash-purple border-2 p-2">
@@ -112,7 +110,7 @@ import HashFill from "./HashFill.astro";
         </a>
 
         <a
-          class="bg-hash-black/30 w-fit min-w-3xs snap-center backdrop-blur-xl transition duration-100 hover:scale-[99%] hover:opacity-75 md:min-w-0"
+          class="bg-hash-black/30 w-full min-w-3xs snap-center backdrop-blur-xl transition duration-100 hover:scale-[99%] hover:opacity-75 md:min-w-0 xl:w-fit"
           href="/blog"
         >
           <div class="border-hash-purple border-2 p-2">
@@ -123,7 +121,7 @@ import HashFill from "./HashFill.astro";
         </a>
 
         <a
-          class="bg-hash-black/30 w-fit min-w-3xs snap-center backdrop-blur-xl transition duration-100 hover:scale-[99%] hover:opacity-75 md:min-w-0"
+          class="bg-hash-black/30 w-full min-w-3xs snap-center backdrop-blur-xl transition duration-100 hover:scale-[99%] hover:opacity-75 md:min-w-0 xl:w-fit"
           href="/blog"
         >
           <div class="border-hash-purple w-fit border-2 p-2">
