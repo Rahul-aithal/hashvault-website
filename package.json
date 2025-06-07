@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format:check": "prettier --check .",
+    "format::write": "prettier --write ."
   },
   "dependencies": {
     "@astrojs/react": "^4.3.0",
@@ -22,6 +24,9 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16",
+    "prettier": "^3.5.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.12",
     "tailwind-scrollbar": "^4.0.2"
   }
 }
