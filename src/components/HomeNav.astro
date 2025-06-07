@@ -2,7 +2,7 @@
 import HashFill from "./HashFill.astro";
 ---
 
-<div class="flex gap-4 justify-between backdrop-blur-xs">
+<div class="flex gap-4 justify-between backdrop-blur-xs bg-hash-black/30">
   <div class="font-brutal font-black text-md py-4 px-5 w-full">
     <ul class="grid grid-flow-col grid-rows-3 gap-1 content-center">
       <a class="hover:opacity-75 transition duration-100 w-fit" href="/about"
@@ -33,25 +33,42 @@ import HashFill from "./HashFill.astro";
     <div class="w-full grid grid-rows-1 align-top gap-4">
       <div class="flex items-center gap-2 h-fit overflow-hidden">
         <h3 class="font-brutal text-sm whitespace-nowrap">LATEST UPDATES</h3>
-        <HashFill textSize="text-sm"/>
+        <HashFill textSize="text-sm" />
       </div>
 
       <div class="flex gap-2">
-        <div class="border-2 border-hash-purple p-2">
-          <p class="font-mono text-xs hyphens-auto text-justify text-clip">
-            Leaked Credentials Surge on Dark Web After Major Breach
-          </p>
-        </div>
-        <div class="border-2 border-hash-purple p-2">
-          <p class="font-mono text-xs hyphens-auto text-justify text-clip">
-            AI-Powered Phishing Kits Are on the Rise
-          </p>
-        </div>
-        <div class="border-2 border-hash-purple p-2 w-fit">
-          <p class="font-mono text-xs hyphens-auto text-justify text-clip">
-            Zero-Day in the Wild: New Windows Exploit Surfaces
-          </p>
-        </div>
+        <a
+          class="hover:opacity-75 hover:scale-[99%] transition duration-100 w-fit"
+          href="/blog"
+        >
+          <div class="border-2 border-hash-purple p-2">
+            <p class="font-mono text-xs hyphens-auto text-justify text-clip">
+              Leaked Credentials Surge on Dark Web After Major Breach
+            </p>
+          </div>
+        </a>
+
+        <a
+          class="hover:opacity-75 hover:scale-[99%] transition duration-100 w-fit"
+          href="/blog"
+        >
+          <div class="border-2 border-hash-purple p-2">
+            <p class="font-mono text-xs hyphens-auto text-justify text-clip">
+              AI-Powered Phishing Kits Are on the Rise
+            </p>
+          </div>
+        </a>
+
+        <a
+          class="hover:opacity-75 hover:scale-[99%] transition duration-100 w-fit"
+          href="/blog"
+        >
+          <div class="border-2 border-hash-purple p-2 w-fit">
+            <p class="font-mono text-xs hyphens-auto text-justify text-clip">
+              Zero-Day in the Wild: New Windows Exploit Surfaces
+            </p>
+          </div>
+        </a>
       </div>
     </div>
   </div>
