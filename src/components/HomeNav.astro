@@ -2,8 +2,8 @@
 import HashFill from "./HashFill.astro";
 ---
 
-<div
-  class="bg-hash-black/30 flex flex-col items-center justify-between leading-none backdrop-blur-xs xl:h-30 xl:flex-row"
+<nav
+  class="bg-hash-black/30 z-[60] flex flex-col items-center justify-between leading-none backdrop-blur-xs xl:h-30 xl:flex-row"
 >
   <!-- Hyperlinks -->
   <div
@@ -72,7 +72,7 @@ import HashFill from "./HashFill.astro";
       x-transition:leave="transition ease-in duration-100"
       x-transition:leave-start="opacity-100 translate-y-0"
       x-transition:leave-end="opacity-0 translate-y-1"
-      class="bg-hash-black/30 border-hash-purple absolute top-full z-40 flex w-full flex-col items-start gap-2 border-b-2 px-3 py-4 backdrop-blur-md"
+      class="bg-hash-black/80 border-hash-purple absolute top-full flex w-full flex-col items-start gap-2 border-b-2 px-3 py-4 backdrop-blur-md"
     >
       <a href="/about" class="transition active:opacity-75">/ABOUT-US</a>
       <a href="/events" class="transition active:opacity-75">/EVENTS</a>
@@ -89,7 +89,7 @@ import HashFill from "./HashFill.astro";
 
   <!-- Latest Updates -->
   <div
-    class="border-hash-purple border-t-2 px-3 pt-2 pb-3 xl:border-t-0 xl:border-l-2 xl:px-5 xl:py-4"
+    class="border-hash-purple w-full border-t-2 px-3 pt-2 pb-3 xl:border-t-0 xl:border-l-2 xl:px-5 xl:py-4"
   >
     <div class="grid w-full grid-rows-1 gap-1 align-top xl:gap-4">
       <div class="flex h-fit items-center gap-2 overflow-hidden">
@@ -135,7 +135,7 @@ import HashFill from "./HashFill.astro";
       </div>
     </div>
   </div>
-</div>
+</nav>
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
 ></script>
