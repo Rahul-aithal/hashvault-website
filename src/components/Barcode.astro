@@ -12,7 +12,7 @@ const { value } = Astro.props;
 <style>
   svg#barcode {
     background-color: transparent;
-    padding-inline: calc(var(--spacing) * 3);
+    padding-inline: calc(var(--spacing) * 0);
   }
 </style>
 
@@ -22,8 +22,8 @@ const { value } = Astro.props;
       format: "CODE128",
       lineColor: "#EFD9FF", // Pink bar color
       background: "transparent", // Transparent background
-      width: 1.6,
-      height: 60,
+      width: 1.5,
+      height: 45,
       displayValue: false,
       margin: 0,
     });
