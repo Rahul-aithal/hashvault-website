@@ -1,14 +1,12 @@
 ---
-const { textSize } = Astro.props
+const { textSize } = Astro.props;
 ---
 
 <div
   class=`flex-1 font-brutal font-black ${textSize} tracking-wider overflow-hidden`
 >
-  <div class="slashFill whitespace-nowrap leading-none">/</div>
+  <div class="slashFill leading-none whitespace-nowrap">/</div>
 </div>
-
-
 
 <script>
   function updateSlashFills() {
@@ -18,9 +16,13 @@ const { textSize } = Astro.props
       const container = element?.parentElement;
       if (!element || !container) return;
 
-      const containerWidth = container.offsetWidth;
+      // First, clear the content to get the true available width
+      element.textContent = "";
 
-      // Use font measurement instead of fixed char width
+      // Now get the available width without the slash content
+      const availableWidth = container.offsetWidth;
+
+      // Use font measurement for accurate character width
       const testChar = document.createElement("span");
       testChar.textContent = "/";
       testChar.style.visibility = "hidden";
@@ -28,19 +30,22 @@ const { textSize } = Astro.props
       testChar.style.whiteSpace = "nowrap";
       testChar.style.fontFamily = getComputedStyle(element).fontFamily;
       testChar.style.fontSize = getComputedStyle(element).fontSize;
-      container.appendChild(testChar);
+      testChar.style.fontWeight = getComputedStyle(element).fontWeight;
+      testChar.style.letterSpacing = getComputedStyle(element).letterSpacing;
 
+      container.appendChild(testChar);
       const charWidth = testChar.getBoundingClientRect().width;
       container.removeChild(testChar);
 
-      const slashCount = Math.floor(containerWidth / charWidth);
-      element.textContent = "/".repeat(slashCount);
+      const slashCount = Math.floor(availableWidth / charWidth);
+
+      // Set the content to the calculated amount
+      element.textContent = "/".repeat(Math.max(1, slashCount));
     });
   }
 
-  // Wait until custom elements are rendered
-  window.addEventListener("DOMContentLoaded", () => {
-    // Give the browser a frame to finish replacing <slash-fill> elements
+  // Wait until DOM is ready
+  document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(() => {
       updateSlashFills();
       window.addEventListener("resize", updateSlashFills);

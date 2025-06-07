@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
 import "@fontsource/archivo-black";
-import '@fontsource-variable/geist-mono';
+import "@fontsource-variable/geist-mono";
 ---
 
 <!doctype html>
@@ -13,8 +13,10 @@ import '@fontsource-variable/geist-mono';
     <meta name="generator" content={Astro.generator} />
     <title>Hashvault</title>
   </head>
-  <body class="h-full p-4 bg-[url('../assets/background.png')]  bg-no-repeat bg-cover bg-center min-h-screen text-white">
-    <div class="border-2 border-hash-purple min-h-full flex flex-col">
+  <body
+    class="h-full min-h-screen bg-[url('../assets/background.png')] bg-cover bg-center bg-no-repeat p-2 text-white xl:p-4"
+  >
+    <div class="border-hash-purple flex min-h-full flex-col border-2">
       <slot />
     </div>
   </body>

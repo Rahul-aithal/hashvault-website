@@ -2,69 +2,132 @@
 import HashFill from "./HashFill.astro";
 ---
 
-<div class="flex gap-4 justify-between backdrop-blur-xs bg-hash-black/30">
-  <div class="font-brutal font-black text-md py-4 px-5 w-full">
-    <ul class="grid grid-flow-col grid-rows-3 gap-1 content-center">
-      <a class="hover:opacity-75 transition duration-100 w-fit" href="/about"
-        >/ABOUT-US</a
+<nav
+  class="bg-hash-black/30 z-[60] flex flex-col items-center justify-between leading-none backdrop-blur-xs xl:h-30 xl:flex-row"
+>
+  <!-- Hyperlinks -->
+  <div
+    class="font-brutal md:text-md hidden h-full w-full px-5 py-4 text-sm font-black xl:block"
+  >
+    <ul class="grid h-full grid-flow-col grid-rows-3 items-center">
+      <a
+        class="w-fit self-start transition duration-100 hover:opacity-75"
+        href="/about">/ABOUT-US</a
       >
-      <a class="hover:opacity-75 transition duration-100 w-fit" href="/events"
+      <a class="w-fit transition duration-100 hover:opacity-75" href="/events"
         >/EVENTS</a
       >
       <a
-        class="hover:opacity-75 transition duration-100 w-fit"
+        class="w-fit self-end transition duration-100 hover:opacity-75"
         href="/departments">/DEPARTMENTS</a
       >
       <a
-        class="hover:opacity-75 transition duration-100 w-fit"
+        class="w-fit self-start transition duration-100 hover:opacity-75"
         href="/resources">/RESOURCES</a
       >
       <a
-        class="hover:opacity-75 transition duration-100 w-fit"
+        class="w-fit transition duration-100 hover:opacity-75"
         href="/hall-of-fame">/HALL-OF-FAME</a
       >
-      <a class="hover:opacity-75 transition duration-100 w-fit" href="/contact"
-        >/CONTACT</a
+      <a
+        class="w-fit self-end transition duration-100 hover:opacity-75"
+        href="/contact">/CONTACT</a
       >
     </ul>
   </div>
 
-  <div class="border-hash-purple border-l-2 px-5 py-4 min-w-3xl">
-    <div class="w-full grid grid-rows-1 align-top gap-4">
-      <div class="flex items-center gap-2 h-fit overflow-hidden">
+  <div
+    x-data="{ open: false }"
+    class="font-brutal text-md md:text-md relative z-50 flex w-full flex-col items-center justify-between gap-2 px-3 py-2 font-black xl:hidden"
+  >
+    <div class="flex w-full items-center justify-between">
+      <div>/HOME</div>
+      <button @click="open = !open" aria-label="Toggle Menu">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-menu"
+        >
+          <path d="M4 12h16"></path>
+          <path d="M4 18h16"></path>
+          <path d="M4 6h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Dropdown Menu -->
+    <div
+      x-show="open"
+      @click.outside="open = false"
+      x-transition:enter="transition ease-out duration-100"
+      x-transition:enter-start="opacity-0 translate-y-1"
+      x-transition:enter-end="opacity-100 translate-y-0"
+      x-transition:leave="transition ease-in duration-100"
+      x-transition:leave-start="opacity-100 translate-y-0"
+      x-transition:leave-end="opacity-0 translate-y-1"
+      class="bg-hash-black/80 border-hash-purple absolute top-full flex w-full flex-col items-start gap-2 border-b-2 px-3 py-4 backdrop-blur-md"
+    >
+      <a href="/about" class="transition active:opacity-75">/ABOUT-US</a>
+      <a href="/events" class="transition active:opacity-75">/EVENTS</a>
+      <a href="/departments" class="transition active:opacity-75"
+        >/DEPARTMENTS</a
+      >
+      <a href="/resources" class="transition active:opacity-75">/RESOURCES</a>
+      <a href="/hall-of-fame" class="transition active:opacity-75"
+        >/HALL-OF-FAME</a
+      >
+      <a href="/contact" class="transition active:opacity-75">/CONTACT</a>
+    </div>
+  </div>
+
+  <!-- Latest Updates -->
+  <div
+    class="border-hash-purple w-full border-t-2 px-3 pt-2 pb-3 xl:border-t-0 xl:border-l-2 xl:px-5 xl:py-4"
+  >
+    <div class="grid w-full grid-rows-1 gap-1 align-top xl:gap-4">
+      <div class="flex h-fit items-center gap-2 overflow-hidden">
         <h3 class="font-brutal text-sm whitespace-nowrap">LATEST UPDATES</h3>
         <HashFill textSize="text-sm" />
       </div>
 
-      <div class="flex gap-2">
+      <div
+        class="scrollbar scrollbar-thumb-transparent scrollbar-track-transparent flex snap-x gap-2 overflow-x-auto md:overflow-x-visible"
+      >
         <a
-          class="hover:opacity-75 hover:scale-[99%] transition duration-100 w-fit"
+          class="bg-hash-black/30 w-fit min-w-3xs snap-center backdrop-blur-xl transition duration-100 hover:scale-[99%] hover:opacity-75 md:min-w-0"
           href="/blog"
         >
-          <div class="border-2 border-hash-purple p-2">
-            <p class="font-mono text-xs hyphens-auto text-justify text-clip">
+          <div class="border-hash-purple border-2 p-2">
+            <p class="text-justify font-mono text-xs text-clip hyphens-auto">
               Leaked Credentials Surge on Dark Web After Major Breach
             </p>
           </div>
         </a>
 
         <a
-          class="hover:opacity-75 hover:scale-[99%] transition duration-100 w-fit"
+          class="bg-hash-black/30 w-fit min-w-3xs snap-center backdrop-blur-xl transition duration-100 hover:scale-[99%] hover:opacity-75 md:min-w-0"
           href="/blog"
         >
-          <div class="border-2 border-hash-purple p-2">
-            <p class="font-mono text-xs hyphens-auto text-justify text-clip">
+          <div class="border-hash-purple border-2 p-2">
+            <p class="text-justify font-mono text-xs text-clip hyphens-auto">
               AI-Powered Phishing Kits Are on the Rise
             </p>
           </div>
         </a>
 
         <a
-          class="hover:opacity-75 hover:scale-[99%] transition duration-100 w-fit"
+          class="bg-hash-black/30 w-fit min-w-3xs snap-center backdrop-blur-xl transition duration-100 hover:scale-[99%] hover:opacity-75 md:min-w-0"
           href="/blog"
         >
-          <div class="border-2 border-hash-purple p-2 w-fit">
-            <p class="font-mono text-xs hyphens-auto text-justify text-clip">
+          <div class="border-hash-purple w-fit border-2 p-2">
+            <p class="text-justify font-mono text-xs text-clip hyphens-auto">
               Zero-Day in the Wild: New Windows Exploit Surfaces
             </p>
           </div>
@@ -72,4 +135,7 @@ import HashFill from "./HashFill.astro";
       </div>
     </div>
   </div>
-</div>
+</nav>
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+></script>

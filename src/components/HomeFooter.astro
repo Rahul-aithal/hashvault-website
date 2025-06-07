@@ -4,25 +4,26 @@ import Date from "./Date.astro";
 import Time from "./Time.astro";
 // import { Icon } from 'astro-icon/components';
 import Globe from "../icons/globe.svg";
-import { Image } from "astro:assets";
 import Barcode from "./Barcode.astro";
 ---
 
-<div class="h-28 w-full backdrop-blur-xs bg-hash-black/30 flex items-start">
+<div
+  class="bg-hash-black/30 flex h-fit w-full items-stretch backdrop-blur-xs md:h-26"
+>
   <div
-    class="border-hash-purple h-full border-r-2 px-3 py-2 flex max-w-3xl flex-col gap-1 overflow-hidden"
+    class="border-hash-purple flex max-w-3xl flex-col gap-1 px-3 py-2 md:border-r-2"
   >
-    <div class="w-full flex items-center gap-2">
+    <div class="flex w-full items-center gap-2">
       <h3 class="font-brutal text-xs whitespace-nowrap">WHO WE ARE</h3>
       <HashFill textSize="text-xs" />
     </div>
 
-    <p class="font-mono text-xs font-bold text-justify h-full content-center">
+    <p class="content-center text-justify font-mono text-xs font-bold">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
       commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore ex ea commodo consequat. Duis aute irure dolor in
+      velit esse cillum dolore ex ea commodo consequat.
     </p>
   </div>
 
@@ -31,36 +32,33 @@ import Barcode from "./Barcode.astro";
     style="left: calc(min(100%, 768px) + 230px);">
   </div> -->
 
-  <div class="border-r-2 border-hash-purple min-w-48">
-    <div
-      class="border-hash-purple px-3 border-b-1 py-2 flex flex-col overflow-hidden"
-    >
-      <div class="w-full flex items-center gap-2">
+  <div class="border-hash-purple hidden w-xl border-r-2 md:grid md:grid-rows-2">
+    <div class="border-hash-purple flex flex-col border-b-1 px-3 py-2">
+      <div class="flex w-full items-center gap-2">
         <h3 class="font-brutal text-xs whitespace-nowrap">DATE</h3>
         <HashFill textSize="text-xs" />
       </div>
-      <Date className="text-md font-bold font-mono" />
+      <Date className="text-md font-mono font-bold" />
     </div>
 
-    <div
-      class="border-hash-purple px-3 py-2 border-t-1 flex flex-col overflow-hidden"
-    >
-      <div class="w-full flex items-center gap-2">
+    <div class="border-hash-purple flex flex-col border-t-1 px-3 py-2">
+      <div class="flex w-full items-center gap-2">
         <h3 class="font-brutal text-xs whitespace-nowrap">TIME</h3>
         <HashFill textSize="text-xs" />
       </div>
-      <Time className="text-md font-bold font-mono" />
+      <Time className="text-md font-mono font-bold" />
     </div>
   </div>
 
-  <div class="h-full p-2 flex justify-center items-center border-r-2">
+  <div
+    class="hidden h-full items-center justify-center p-2 md:flex xl:border-r-2"
+  >
     <Globe class="h-full w-auto" />
   </div>
 
-  <div class="h-full w-full p-2 flex overflow-hidden">
-    <div class="flex flex-col gap-1 w-full  justify-center items-center">
-
-      <div class="w-full flex items-center gap-2">
+  <div class="hidden h-full w-fit p-2 leading-none xl:flex">
+    <div class="flex w-full flex-col justify-between gap-1">
+      <div class="flex w-full items-center gap-2">
         <h3 class="font-brutal text-xs whitespace-nowrap">
           DEFEND THE DIGITAL REALM
         </h3>
@@ -69,11 +67,10 @@ import Barcode from "./Barcode.astro";
 
       <Barcode value="ctf{W3_4R3_H45HVAU7T}" />
 
-      <div class="w-full flex items-center gap1">
+      <div class="gap1 flex w-full items-center">
         <HashFill textSize="text-xs" />
         <h3 class="font-brutal text-xs whitespace-nowrap">HASHVAULT</h3>
       </div>
-  
     </div>
   </div>
 </div>
