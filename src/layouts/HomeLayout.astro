@@ -1,0 +1,32 @@
+---
+import "../styles/global.css";
+import "@fontsource/archivo-black";
+import "@fontsource-variable/geist-mono";
+---
+
+<!doctype html>
+<html lang="en h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Hashvault</title>
+  </head>
+  <body
+    class="h-full min-h-screen bg-[url('../assets/background.png')] bg-cover bg-center bg-no-repeat p-2 text-white xl:p-4"
+  >
+    <div class="border-hash-purple flex min-h-full flex-col border-2">
+      <slot />
+    </div>
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>

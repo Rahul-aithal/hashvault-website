@@ -1,0 +1,40 @@
+---
+import avatar from "../../assets/avatar.png";
+
+const members = [
+  { id: "01", name: "ADITHYA", position: "LEAD", image: avatar },
+  { id: "02", name: "ADITHYA", position: "LEAD", image: avatar },
+  { id: "03", name: "ADITHYA", position: "LEAD", image: avatar },
+  { id: "04", name: "ADITHYA", position: "LEAD", image: avatar },
+  { id: "05", name: "ADITHYA", position: "LEAD", image: avatar },
+  { id: "06", name: "ADITHYA", position: "LEAD", image: avatar },
+  { id: "07", name: "ADITHYA", position: "LEAD", image: avatar },
+  { id: "08", name: "ADITHYA", position: "LEAD", image: avatar },
+];
+---
+
+<div
+  class="border-hash-purple grid grid-cols-1 overflow-hidden border-1 sm:grid-cols-2 lg:grid-cols-4"
+>
+  {
+    members.map((member) => (
+      <div class="border-hash-purple aspect-square border-1 p-4 font-mono text-white">
+        <div class="flex justify-center p-12">
+          <img
+            src={member.image.src}
+            alt={member.name}
+            class="aspect-square object-cover"
+          />
+        </div>
+
+        <div class="mt-4 flex items-end justify-between">
+          <div>
+            <p class="text-xs text-white/75">({member.id})</p>
+            <p class="text-sm font-semibold">{member.name}</p>
+          </div>
+          <p class="text-sm">{member.position}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>

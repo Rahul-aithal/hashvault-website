@@ -1,0 +1,204 @@
+---
+import MorseCode from "../../components/MorseCode.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
+import Team from "./Team.astro";
+---
+
+<MainLayout>
+  <div class="flex flex-col gap-4 px-12 py-6 pb-12">
+    <!-- WHO WE ARE -->
+    <h1 class="font-brutal text-5xl font-black">WHO WE ARE</h1>
+    <div class="relative h-[20rem]">
+      <!-- Background + Overlay -->
+      <div
+        class="absolute inset-0 z-0 bg-[url('../assets/camera.png')] bg-cover bg-[center_top_-25rem] bg-no-repeat"
+      >
+        <div class="bg-hash-purple/10 absolute inset-0 backdrop-brightness-90">
+        </div>
+      </div>
+
+      <!-- Foreground Content -->
+      <div class="relative z-10 flex h-full justify-between p-4">
+        <div
+          class="border-hash-black bg-hash-purple ml-12 h-fit w-fit self-center border-2 p-4"
+        >
+          <h2
+            class="text-hash-black font-brutal text-3xl font-black [writing-mode:sideways-lr]"
+          >
+            H45HVAU7T
+          </h2>
+        </div>
+
+        <!-- Blurred content box -->
+        <div
+          class="border-hash-black bg-hash-black/50 glass-noise w-2xl self-end border-2 p-4 backdrop-blur-md"
+        >
+          <p class="text-justify font-mono font-bold">
+            We're a community of cyber enthusiasts fuelled by curiosity, driven
+            by purpose, and united by the mission to make the digital world
+            safer.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="py-4">
+      <MorseCode
+        code=".-- . .----. .-. .       -. --- -       .--- ..- ... -       .... .- -.-. -.- . .-. ... --..--       .-- . .----. .-. .       .-       -.-. ..- .-.. - ..- .-. ."
+      />
+    </div>
+
+    <div class="grid grid-cols-3 gap-4">
+      <div
+        class="border-hash-purple col-span-2 flex flex-col justify-between border-2 p-4 text-justify font-mono"
+      >
+        <p>
+          Founded by a group of passionate students and inspired by alumni
+          mentors blazing trails in the cybersecurity world, the club emerged as
+          a safe space for curiosity, experimentation, and ethical hacking.
+        </p>
+        <p>
+          What started as a few minds decoding CTFs over coffee has now evolved
+          into a full-fledged CULTure of cyber defenders.
+        </p>
+        <p>We weren't founded, we were forged.</p>
+      </div>
+      <div
+        class="border-hash-purple inline-block border-2 p-4 font-mono text-sm tracking-widest text-white"
+      >
+        <table class="w-full table-auto border-collapse">
+          <tbody>
+            <!-- Row 1 -->
+            <tr class="border-hash-purple border-b-2">
+              <td class="px-4 py-2">NAME</td>
+              <td class="px-4 py-2 text-right">HASHVAULT</td>
+            </tr>
+
+            <!-- Row 2 -->
+            <tr class="border-hash-purple border-b-2">
+              <td class="px-4 py-2">FOUNDED</td>
+              <td class="px-4 py-2 text-right">20XX / XX / XX</td>
+            </tr>
+
+            <!-- Row 3 -->
+            <tr class="border-hash-purple border-b-2">
+              <td class="px-4 py-2">FUNCTION</td>
+              <td class="px-4 py-2 text-right">CYBERSECURITY</td>
+            </tr>
+
+            <!-- Row 4 -->
+            <tr class="border-hash-purple border-b-2">
+              <td class="px-4 py-2">STATUS</td>
+              <td
+                class="px-4 py-2 text-right text-green-400 drop-shadow-[0px_0px_5px_theme(color-green-400/0.7)]"
+                >FUNCTIONAL</td
+              >
+            </tr>
+
+            <!-- Row 5 -->
+            <tr>
+              <td class="px-4 py-2">MENTAL-STATE</td>
+              <td
+                class="px-4 py-2 text-right text-red-500 drop-shadow-[0px_0px_5px_theme(color-red-500/0.7)]"
+                >LEVEL C</td
+              >
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TEAM -->
+    <div class="mt-12 flex w-full flex-col gap-4">
+      <h1 class="font-brutal w-full text-center text-5xl font-black">
+        MEET OUR TEAM
+      </h1>
+      <Team />
+    </div>
+
+    <!-- CORE VALUES -->
+    <div class="mt-12 flex flex-col gap-4"></div>
+    <div class="relative h-[20rem]">
+      <!-- Background + Overlay -->
+      <div
+        class="absolute inset-0 z-0 bg-[url('../assets/lock.png')] bg-cover bg-[center_top_-25rem] bg-no-repeat"
+      >
+        <div class="bg-hash-purple/10 absolute inset-0 backdrop-brightness-90">
+        </div>
+      </div>
+
+      <!-- Foreground Content -->
+      <div class="relative z-10 flex h-full justify-between p-4">
+        <!-- Purple vertical heading -->
+        <!-- Blurred content box -->
+        <div
+          class="border-hash-black bg-hash-black/50 glass-noise w-2xl self-end border-2 p-4 backdrop-blur-md"
+        >
+          <p class="text-justify font-mono font-bold">
+            We believe the best learning happens when you're uncomfortable. At
+            HashVault, we encourage questions, exploration, and the hunger to
+            dig deeper—because true hackers are never satisfied with
+            surface-level answers.
+          </p>
+        </div>
+
+        <div
+          class="border-hash-black bg-hash-purple mr-12 h-fit w-fit self-center border-2 p-4"
+        >
+          <h2
+            class="text-hash-black font-brutal text-3xl font-black [writing-mode:sideways-lr]"
+          >
+            CORE VALUES
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div class="border-hash-purple flex flex-col gap-4 border-2 p-4">
+      <div class="flex flex-col gap-1">
+        <h3 class="font-brutal text-2xl font-black uppercase">Ethics First</h3>
+        <p class="text-md font-mono">
+          With great power comes… yeah, you know the line. We uphold responsible
+          disclosure, respect privacy, and follow a strict ethical code. Hacking
+          without ethics isn't hacking, it's harm.
+        </p>
+      </div>
+      <div class="flex flex-col gap-1">
+        <h3 class="font-brutal text-2xl font-black uppercase">
+          Community Over Competition
+        </h3>
+        <p class="text-md font-mono">
+          CTFs are competitive. We aren't. We lift each other up, share
+          resources, and collaborate often—because real growth happens together.
+        </p>
+      </div>
+      <div class="flex flex-col gap-1">
+        <h3 class="font-brutal text-2xl font-black uppercase">
+          Security is a mindset
+        </h3>
+        <p class="text-md font-mono">
+          It's not just about tools and techniques. It's about how you think. We
+          promote a proactive, prevention-first approach to digital defense.
+        </p>
+      </div>
+      <div class="flex flex-col gap-1">
+        <h3 class="font-brutal text-2xl font-black uppercase">
+          Culture > Club
+        </h3>
+        <p class="text-md font-mono">
+          We're more than a tech club, we're a culture. A movement. A mindset. A
+          space where cyber enthusiasts become cyber defenders.
+        </p>
+      </div>
+      <div class="flex flex-col gap-1">
+        <h3 class="font-brutal text-2xl font-black uppercase">
+          Impact-Driven Learning
+        </h3>
+        <p class="text-md font-mono">
+          From securing startups to educating peers, our learning is never in
+          isolation. Everything we do aims to make the digital world safer,
+          smarter, and more resilient.
+        </p>
+      </div>
+    </div>
+  </div>
+</MainLayout>

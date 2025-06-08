@@ -30,3 +30,17 @@
   pointer-events: none;
   mix-blend-mode: overlay;
 }
+
+@layer components {
+  .morse-dot {
+    @apply inline-block h-1 w-1 bg-white;
+  }
+
+  .morse-dash {
+    @apply h-1 w-3 bg-white;
+  }
+
+  .morse-gap {
+    @apply inline-block w-0.5;
+  }
+}
