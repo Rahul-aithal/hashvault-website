@@ -11,12 +11,15 @@
     "format::write": "prettier --write ."
   },
   "dependencies": {
+    "@astrojs/alpinejs": "^0.4.8",
     "@astrojs/react": "^4.3.0",
     "@fontsource-variable/geist-mono": "^5.2.6",
     "@fontsource/archivo-black": "^5.2.5",
     "@tailwindcss/vite": "^4.1.8",
+    "@types/alpinejs": "^3.13.11",
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.5",
+    "alpinejs": "^3.14.9",
     "astro": "^5.8.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

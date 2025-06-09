@@ -5,25 +5,30 @@ import Team from "./Team.astro";
 ---
 
 <MainLayout>
-  <div class="flex flex-col gap-4 px-12 py-6 pb-12">
+  <div class="flex flex-col gap-2 lg:gap-2 lg:px-12 lg:py-6 lg:pb-12">
     <!-- WHO WE ARE -->
-    <h1 class="font-brutal text-5xl font-black">WHO WE ARE</h1>
+    <h1
+      class="border-hash-purple font-brutal border-2 py-2 text-center text-4xl font-black lg:border-0 lg:py-0 lg:text-left lg:text-5xl"
+    >
+      WHO WE ARE
+    </h1>
+
     <div class="relative h-[20rem]">
       <!-- Background + Overlay -->
       <div
-        class="absolute inset-0 z-0 bg-[url('../assets/camera.png')] bg-cover bg-[center_top_-25rem] bg-no-repeat"
+        class="absolute inset-0 z-0 bg-[url('../assets/camera.png')] bg-cover bg-no-repeat lg:bg-[center_top_-25rem]"
       >
         <div class="bg-hash-purple/10 absolute inset-0 backdrop-brightness-90">
         </div>
       </div>
 
       <!-- Foreground Content -->
-      <div class="relative z-10 flex h-full justify-between p-4">
+      <div class="relative z-10 flex h-full justify-between p-2 lg:p-4">
         <div
-          class="border-hash-black bg-hash-purple ml-12 h-fit w-fit self-center border-2 p-4"
+          class="border-hash-black bg-hash-purple hidden h-fit w-full self-center border-2 p-2 lg:ml-12 lg:block lg:w-fit lg:p-4"
         >
           <h2
-            class="text-hash-black font-brutal text-3xl font-black [writing-mode:sideways-lr]"
+            class="text-hash-black font-brutal text-xl font-black lg:text-3xl lg:[writing-mode:sideways-lr]"
           >
             H45HVAU7T
           </h2>
@@ -31,9 +36,9 @@ import Team from "./Team.astro";
 
         <!-- Blurred content box -->
         <div
-          class="border-hash-black bg-hash-black/50 glass-noise w-2xl self-end border-2 p-4 backdrop-blur-md"
+          class="border-hash-black bg-hash-black/50 glass-noise self-end border-2 p-2 backdrop-blur-md lg:w-2xl lg:p-4"
         >
-          <p class="text-justify font-mono font-bold">
+          <p class="text-justify font-mono text-xs font-bold lg:text-base">
             We're a community of cyber enthusiasts fuelled by curiosity, driven
             by purpose, and united by the mission to make the digital world
             safer.
@@ -42,15 +47,15 @@ import Team from "./Team.astro";
       </div>
     </div>
 
-    <div class="py-4">
+    <div class="hidden py-4">
       <MorseCode
         code=".-- . .----. .-. .       -. --- -       .--- ..- ... -       .... .- -.-. -.- . .-. ... --..--       .-- . .----. .-. .       .-       -.-. ..- .-.. - ..- .-. ."
       />
     </div>
 
-    <div class="grid grid-cols-3 gap-4">
+    <div class="grid grid-rows-1 gap-4 lg:grid-cols-3">
       <div
-        class="border-hash-purple col-span-2 flex flex-col justify-between border-2 p-4 text-justify font-mono"
+        class="border-hash-purple flex flex-col justify-between gap-4 border-2 p-4 text-justify font-mono text-xs lg:col-span-2 lg:text-base"
       >
         <p>
           Founded by a group of passionate students and inspired by alumni
@@ -64,7 +69,7 @@ import Team from "./Team.astro";
         <p>We weren't founded, we were forged.</p>
       </div>
       <div
-        class="border-hash-purple inline-block border-2 p-4 font-mono text-sm tracking-widest text-white"
+        class="border-hash-purple inline-block border-2 p-2 font-mono text-xs tracking-widest text-white lg:p-4 lg:text-base"
       >
         <table class="w-full table-auto border-collapse">
           <tbody>
@@ -109,32 +114,39 @@ import Team from "./Team.astro";
     </div>
 
     <!-- TEAM -->
-    <div class="mt-12 flex w-full flex-col gap-4">
-      <h1 class="font-brutal w-full text-center text-5xl font-black">
+    <div class="mt-6 flex w-full flex-col gap-2 lg:mt-12 lg:gap-4">
+      <h1
+        class="border-hash-purple font-brutal border-2 px-2 py-2 text-center text-4xl font-black lg:border-0 lg:text-5xl"
+      >
         MEET OUR TEAM
       </h1>
       <Team />
     </div>
 
     <!-- CORE VALUES -->
-    <div class="mt-12 flex flex-col gap-4"></div>
+    <div class="mt-6 flex flex-col gap-4 lg:mt-12"></div>
+    <h1
+      class="border-hash-purple font-brutal border-2 px-2 py-2 text-center text-4xl font-black lg:hidden lg:border-0 lg:text-left lg:text-5xl"
+    >
+      CORE VALUES
+    </h1>
+
     <div class="relative h-[20rem]">
       <!-- Background + Overlay -->
       <div
-        class="absolute inset-0 z-0 bg-[url('../assets/lock.png')] bg-cover bg-[center_top_-25rem] bg-no-repeat"
+        class="absolute inset-0 z-0 bg-[url('../assets/lock.png')] bg-cover bg-no-repeat lg:bg-[center_top_-25rem]"
       >
         <div class="bg-hash-purple/10 absolute inset-0 backdrop-brightness-90">
         </div>
       </div>
 
       <!-- Foreground Content -->
-      <div class="relative z-10 flex h-full justify-between p-4">
-        <!-- Purple vertical heading -->
+      <div class="relative z-10 flex h-full justify-between p-2 lg:p-4">
         <!-- Blurred content box -->
         <div
-          class="border-hash-black bg-hash-black/50 glass-noise w-2xl self-end border-2 p-4 backdrop-blur-md"
+          class="border-hash-black bg-hash-black/50 glass-noise self-end border-2 p-2 backdrop-blur-md lg:w-2xl lg:p-4"
         >
-          <p class="text-justify font-mono font-bold">
+          <p class="text-justify font-mono text-xs font-bold lg:text-base">
             We believe the best learning happens when you're uncomfortable. At
             HashVault, we encourage questions, exploration, and the hunger to
             dig deeper—because true hackers are never satisfied with
@@ -143,20 +155,22 @@ import Team from "./Team.astro";
         </div>
 
         <div
-          class="border-hash-black bg-hash-purple mr-12 h-fit w-fit self-center border-2 p-4"
+          class="border-hash-black bg-hash-purple hidden h-fit w-full self-center border-2 p-2 lg:mr-12 lg:block lg:w-fit lg:p-4"
         >
           <h2
-            class="text-hash-black font-brutal text-3xl font-black [writing-mode:sideways-lr]"
+            class="text-hash-black font-brutal text-xl font-black lg:text-3xl lg:[writing-mode:sideways-lr]"
           >
             CORE VALUES
           </h2>
         </div>
       </div>
     </div>
-    <div class="border-hash-purple flex flex-col gap-4 border-2 p-4">
+    <div
+      class="border-hash-purple flex flex-col gap-4 border-2 p-4 font-mono text-sm"
+    >
       <div class="flex flex-col gap-1">
         <h3 class="font-brutal text-2xl font-black uppercase">Ethics First</h3>
-        <p class="text-md font-mono">
+        <p class="font-mono">
           With great power comes… yeah, you know the line. We uphold responsible
           disclosure, respect privacy, and follow a strict ethical code. Hacking
           without ethics isn't hacking, it's harm.
@@ -166,7 +180,7 @@ import Team from "./Team.astro";
         <h3 class="font-brutal text-2xl font-black uppercase">
           Community Over Competition
         </h3>
-        <p class="text-md font-mono">
+        <p>
           CTFs are competitive. We aren't. We lift each other up, share
           resources, and collaborate often—because real growth happens together.
         </p>
@@ -175,7 +189,7 @@ import Team from "./Team.astro";
         <h3 class="font-brutal text-2xl font-black uppercase">
           Security is a mindset
         </h3>
-        <p class="text-md font-mono">
+        <p>
           It's not just about tools and techniques. It's about how you think. We
           promote a proactive, prevention-first approach to digital defense.
         </p>
@@ -184,7 +198,7 @@ import Team from "./Team.astro";
         <h3 class="font-brutal text-2xl font-black uppercase">
           Culture > Club
         </h3>
-        <p class="text-md font-mono">
+        <p>
           We're more than a tech club, we're a culture. A movement. A mindset. A
           space where cyber enthusiasts become cyber defenders.
         </p>
@@ -193,7 +207,7 @@ import Team from "./Team.astro";
         <h3 class="font-brutal text-2xl font-black uppercase">
           Impact-Driven Learning
         </h3>
-        <p class="text-md font-mono">
+        <p>
           From securing startups to educating peers, our learning is never in
           isolation. Everything we do aims to make the digital world safer,
           smarter, and more resilient.
