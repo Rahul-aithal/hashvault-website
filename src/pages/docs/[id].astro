@@ -1,0 +1,89 @@
+---
+import { getCollection, render } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+// 1. Generate a new path for every collection entry
+export async function getStaticPaths() {
+  const entries = await getCollection("docs");
+
+  return entries.map((entry) => ({
+    params: { id: entry.slug },
+    props: { entry },
+  }));
+}
+// 2. For your template, you can get the entry directly from the prop
+const { entry } = Astro.props;
+const { href: url } = Astro.url;
+const { data } = entry;
+const { title } = data;
+const { Content, headings } = await entry.render();
+
+---
+
+<MainLayout>
+  <div class="flex">
+    <article
+      class="scroll-mt-48 prose prose-invert prose-purple mx-auto max-w-4xl px-4 py-12 font-mono"
+    >
+      <h1>{entry.data.title}</h1>
+      <Content />
+    </article>
+
+    <aside
+      class="sticky top-16 hidden h-[calc(100vh-4rem)] w-2xs overflow-y-auto border-l border-hash-purple px-4 py-12 font-mono text-sm lg:block"
+    > 
+      <p class="mb-3 tracking-wide text-white uppercase">On this page</p>
+      <ul class="space-y-2 top-16">
+        {headings 
+            .filter((h) => h.depth <= 3)
+            .map((h) => (
+              <li>
+                <a
+                  href={`#${h.slug}`}
+                  class="block transition-colors hover:text-hash-purple text-hash-purple/50"
+                  data-id={h.slug}
+                >
+                  {h.depth === 2 ? (
+                    <span class="font-bold">{h.text}</span>
+                  ) : (
+                    <span class="ml-3">{h.text}</span>
+                  )}
+                </a>
+              </li>
+            ))
+        }
+      </ul>
+    </aside>
+  </div>
+</MainLayout>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const id = entry.target.getAttribute("id");
+        const link = document.querySelector(`[data-id="${id}"]`);
+
+
+        if (entry.isIntersecting) {
+          // Reset all links
+          document.querySelectorAll("[data-id]").forEach((el) => {
+            el.classList.remove("text-hash-purple");
+            el.classList.add("text-hash-purple/50");
+          });
+
+          // Highlight active
+          link?.classList.remove("text-hash-purple/50");
+          link?.classList.add("text-hash-purple");
+        }
+      }
+    },
+    {
+      rootMargin: "0px 0px -40% 0px", // Trigger when heading is near top
+      threshold: 0,
+    },
+  );
+
+  document
+    .querySelectorAll("h2[id], h3[id]")
+    .forEach((section) => observer.observe(section));
+</script>
