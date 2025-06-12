@@ -1,8 +1,7 @@
 // 1. Import utilities from `astro:content`
 import { defineCollection, z } from 'astro:content';
-
-// 2. Import loader(s)
-import { glob, file } from 'astro/loaders';
+import { docsLoader } from '@astrojs/starlight/loaders';
+import { docsSchema } from '@astrojs/starlight/schema';
 
 // 3. Define your collection(s)
 const docs = defineCollection({
@@ -11,5 +10,6 @@ const docs = defineCollection({
     title: z.string(),
   }),
 });
+
 // 4. Export a single `collections` object to register your collection(s)
-export const collections = { docs };
+export const collections = { docs: defineCollection({ loader: docsLoader(), schema: docsSchema() }), };

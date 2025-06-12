@@ -9,10 +9,11 @@ import alpinejs from "@astrojs/alpinejs";
 
 import markdoc from "@astrojs/markdoc";
 
+import starlight from "@astrojs/starlight";
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [alpinejs(), markdoc()],
-
+  integrations: [alpinejs(), markdoc(), starlight({ title: "Hashvault Docs" })],
   vite: {
     css: {
       transformer: "lightningcss",

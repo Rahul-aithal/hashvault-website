@@ -14,6 +14,8 @@
     "@astrojs/alpinejs": "^0.4.8",
     "@astrojs/markdoc": "^0.15.0",
     "@astrojs/react": "^4.3.0",
+    "@astrojs/starlight": "^0.34.3",
+    "@astrojs/starlight-markdoc": "^0.4.0",
     "@fontsource-variable/geist-mono": "^5.2.6",
     "@fontsource/archivo-black": "^5.2.5",
     "@tailwindcss/vite": "^4.1.8",
