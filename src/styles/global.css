@@ -1,6 +1,6 @@
 @layer base, starlight, theme, components, utilities;
 
-@import '@astrojs/starlight-tailwind';
+@import "@astrojs/starlight-tailwind";
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/utilities.css" layer(utilities);
 @import "tailwindcss/preflight.css" layer(base);
@@ -17,14 +17,14 @@ html {
 
   --sl-color-bg: var(--color-hash-black);
   --sl-color-bg-nav: var(--color-hash-black);
-  --sl-color-bg-sidebar: oklch(0.1536 0.0071 314.6 );
+  --sl-color-bg-sidebar: oklch(0.1536 0.0071 314.6);
   /* --sl-color-hairline-light: oklch(0.9148 0.056 311.05 / 0.5); */
   /* --sl-color-hairline: var(--color-hash-purple); */
   /* --sl-color-hairline-shade: var(--color-hash-purple); */
   --sl-color-accent-high: var(--color-hash-purple);
 
   --sl-shadow-lg: none;
-  --sl-shadow-md:none;
+  --sl-shadow-md: none;
   --sl-shadow-sm: none;
 
   --sl-sidebar-width: 20rem;
@@ -37,12 +37,10 @@ html {
   .toggle {
     border-radius: 0 !important;
   }
-  
 
   dialog {
     border-radius: 0 !important;
   }
-
 
   .right-sidebar {
     border-left-width: 1px !important;
@@ -72,11 +70,10 @@ html {
     width: 20%;
   }
 
-  		a {
-			border-radius: 0rem !important;
-		}
+  a {
+    border-radius: 0rem !important;
+  }
 }
-
 
 @theme {
   --font-brutal: "Archivo Black", "sans-serif";
@@ -91,7 +88,7 @@ html {
   --color-accent-600: oklch(53.02% 0.05551 310.523);
   --color-accent-900: oklch(31.715% 0.02895 311.637);
   --color-accent-950: oklch(25.882% 0.02034 311.725);
-  
+
   /* Generated gray color palettes. */
   --color-gray-100: oklch(97.343% 0.00143 285.217);
   --color-gray-200: oklch(94.744% 0.00295 307.161);
