@@ -18,7 +18,15 @@ export default defineConfig({
     markdoc(),
     starlight({
       title: "HASHVAULT",
-      customCss: ["./src/styles/global.css", "@fontsource/geist-mono/400.css"],
+      components: {
+        Header: "./src/components/DocsHeader.astro",
+        ThemeProvider: "./src/components/ForceDarkTheme.astro",
+        ThemeSelect: "./src/components/EmptyComponent.astro",
+      },
+      customCss: [
+        "./src/styles/global.css",
+        "@fontsource/archivo-black/400.css",
+      ],
     }),
   ],
   vite: {

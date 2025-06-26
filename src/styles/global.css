@@ -2,12 +2,15 @@
 
 @import '@astrojs/starlight-tailwind';
 @import "tailwindcss/theme.css" layer(theme);
-@import "tailwindcss/preflight.css" layer(base);
 @import "tailwindcss/utilities.css" layer(utilities);
+@import "tailwindcss/preflight.css" layer(base);
 
 @plugin '@tailwindcss/typography';
 @plugin 'tailwind-scrollbar';
 
+html {
+  scroll-behavior: smooth;
+}
 
 :root {
   /* --sl-font: 'Geist Mono', monospace; */
@@ -15,9 +18,9 @@
   --sl-color-bg: var(--color-hash-black);
   --sl-color-bg-nav: var(--color-hash-black);
   --sl-color-bg-sidebar: oklch(0.1536 0.0071 314.6 );
-  --sl-color-hairline-light: oklch(0.9148 0.056 311.05 / 0.5);
+  /* --sl-color-hairline-light: oklch(0.9148 0.056 311.05 / 0.5); */
   /* --sl-color-hairline: var(--color-hash-purple); */
-  --sl-color-hairline-shade: var(--color-hash-purple);
+  /* --sl-color-hairline-shade: var(--color-hash-purple); */
   --sl-color-accent-high: var(--color-hash-purple);
 
   --sl-shadow-lg: none;
@@ -30,11 +33,41 @@
 }
 
 @layer utilities {
-  .right-sidebar {
-    border-left-width: 1px !important;
-    border-color: var(--color-hash-purple);
+  button,
+  .toggle {
+    border-radius: 0 !important;
+  }
+  
+
+  dialog {
+    border-radius: 0 !important;
   }
 
+
+  .right-sidebar {
+    border-left-width: 1px !important;
+    /* border-color: var(--color-hash-purple); */
+  }
+
+  /* Starlight mobile menu button */
+  button:where(.astro-t2h2j5px) {
+    background-color: var(--color-hash-black) !important;
+    color: white;
+  }
+
+  /* Mobile search icon svg */
+  @media (max-width: 500px) {
+    button[data-open-modal] svg,
+    .toggle svg {
+      width: 0.7em !important;
+      height: 0.7em !important;
+    }
+  }
+
+  /* Expanded/active state */
+  :where(.astro-t2h2j5px)[aria-expanded="true"] button:where(.astro-t2h2j5px) {
+    background-color: var(--color-hash-black) !important;
+  }
   .right-sidebar-panel > .sl-container {
     width: 20%;
   }
