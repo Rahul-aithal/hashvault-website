@@ -1,13 +1,106 @@
-@import "tailwindcss";
+@layer base, starlight, theme, components, utilities;
+
+@import '@astrojs/starlight-tailwind';
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+@import "tailwindcss/preflight.css" layer(base);
+
 @plugin '@tailwindcss/typography';
 @plugin 'tailwind-scrollbar';
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* --sl-font: 'Geist Mono', monospace; */
+
+  --sl-color-bg: var(--color-hash-black);
+  --sl-color-bg-nav: var(--color-hash-black);
+  --sl-color-bg-sidebar: oklch(0.1536 0.0071 314.6 );
+  /* --sl-color-hairline-light: oklch(0.9148 0.056 311.05 / 0.5); */
+  /* --sl-color-hairline: var(--color-hash-purple); */
+  /* --sl-color-hairline-shade: var(--color-hash-purple); */
+  --sl-color-accent-high: var(--color-hash-purple);
+
+  --sl-shadow-lg: none;
+  --sl-shadow-md:none;
+  --sl-shadow-sm: none;
+
+  --sl-sidebar-width: 20rem;
+
+  --sl-content-width: 56rem;
+}
+
+@layer utilities {
+  button,
+  .toggle {
+    border-radius: 0 !important;
+  }
+  
+
+  dialog {
+    border-radius: 0 !important;
+  }
+
+
+  .right-sidebar {
+    border-left-width: 1px !important;
+    /* border-color: var(--color-hash-purple); */
+  }
+
+  /* Starlight mobile menu button */
+  button:where(.astro-t2h2j5px) {
+    background-color: var(--color-hash-black) !important;
+    color: white;
+  }
+
+  /* Mobile search icon svg */
+  @media (max-width: 500px) {
+    button[data-open-modal] svg,
+    .toggle svg {
+      width: 0.7em !important;
+      height: 0.7em !important;
+    }
+  }
+
+  /* Expanded/active state */
+  :where(.astro-t2h2j5px)[aria-expanded="true"] button:where(.astro-t2h2j5px) {
+    background-color: var(--color-hash-black) !important;
+  }
+  .right-sidebar-panel > .sl-container {
+    width: 20%;
+  }
+
+  		a {
+			border-radius: 0rem !important;
+		}
+}
+
 
 @theme {
   --font-brutal: "Archivo Black", "sans-serif";
   --font-mono: "Geist Mono Variable", "monospace";
+  --font-sans: "Geist Mono Variable", "monospace";
 
   --color-hash-black: oklch(0.1536 0.0071 314.6);
   --color-hash-purple: oklch(0.9148 0.056 311.05);
+
+  /* Generated accent color palettes. */
+  --color-accent-200: oklch(83.298% 0.0195 309.589);
+  --color-accent-600: oklch(53.02% 0.05551 310.523);
+  --color-accent-900: oklch(31.715% 0.02895 311.637);
+  --color-accent-950: oklch(25.882% 0.02034 311.725);
+  
+  /* Generated gray color palettes. */
+  --color-gray-100: oklch(97.343% 0.00143 285.217);
+  --color-gray-200: oklch(94.744% 0.00295 307.161);
+  --color-gray-300: oklch(81.312% 0.00359 324.409);
+  --color-gray-400: oklch(63.726% 0.00689 317.309);
+  --color-gray-500: oklch(46.002% 0.0069 308.035);
+  --color-gray-700: oklch(34.133% 0.00802 317.525);
+  --color-gray-800: oklch(27.194% 0.00619 314.521);
+  --color-gray-900: oklch(21.058% 0.00249 325.217);
 }
 
 .glass-noise {
