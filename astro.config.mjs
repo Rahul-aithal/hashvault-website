@@ -13,7 +13,14 @@ import starlight from "@astrojs/starlight";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [alpinejs(), markdoc(), starlight({ title: "Hashvault Docs" })],
+  integrations: [
+    alpinejs(),
+    markdoc(),
+    starlight({
+      title: "HASHVAULT",
+      customCss: ["./src/styles/global.css", "@fontsource/geist-mono/400.css"],
+    }),
+  ],
   vite: {
     css: {
       transformer: "lightningcss",
