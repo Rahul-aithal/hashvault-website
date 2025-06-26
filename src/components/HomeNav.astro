@@ -1,5 +1,6 @@
 ---
 import HashFill from "./HashFill.astro";
+const mailto = "mailto:contact@hashvault.club"
 ---
 
 <nav
@@ -31,7 +32,7 @@ import HashFill from "./HashFill.astro";
       >
       <a
         class="w-fit self-end transition duration-100 hover:opacity-75"
-        href="/contact">/CONTACT</a
+        href={mailto}>/CONTACT</a
       >
     </ul>
   </div>
@@ -76,14 +77,12 @@ import HashFill from "./HashFill.astro";
     >
       <a href="/about" class="transition active:opacity-75">/ABOUT-US</a>
       <a href="/events" class="transition active:opacity-75">/EVENTS</a>
-      <a href="/" class="transition active:opacity-75"
-        >/CTF-PLATFORM</a
-      >
+      <a href="/" class="transition active:opacity-75">/CTF-PLATFORM</a>
       <a href="/resources" class="transition active:opacity-75">/RESOURCES</a>
       <a href="/hall-of-fame" class="transition active:opacity-75"
         >/HALL-OF-FAME</a
       >
-      <a href="/contact" class="transition active:opacity-75">/CONTACT</a>
+      <a href={mailto} class="transition active:opacity-75">/CONTACT</a>
     </div>
   </div>
 

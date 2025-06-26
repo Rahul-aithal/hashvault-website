@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import "@fontsource/archivo-black";
 import "@fontsource-variable/geist-mono";
+const mailto = "mailto:contact@hashvault.club"
 ---
 
 <!doctype html>
@@ -34,7 +35,7 @@ import "@fontsource-variable/geist-mono";
         >
         <a
           class="w-fit self-end transition duration-100 hover:opacity-75"
-          href="/contact">/CONTACT</a
+          href={mailto}>/CONTACT</a
         >
       </ul>
 
@@ -87,7 +88,7 @@ import "@fontsource-variable/geist-mono";
           <a href="/hall-of-fame" class="transition active:opacity-75"
             >/HALL-OF-FAME</a
           >
-          <a href="/contact" class="transition active:opacity-75">/CONTACT</a>
+          <a href={mailto} class="transition active:opacity-75">/CONTACT</a>
         </div>
       </div>
     </nav>
