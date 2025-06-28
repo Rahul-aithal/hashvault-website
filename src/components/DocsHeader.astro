@@ -1,5 +1,6 @@
 ---
 import Search from "@astrojs/starlight/components/Search.astro";
+const mailto = "mailto:contact@hashvault.club";
 ---
 
 <div
@@ -19,7 +20,7 @@ import Search from "@astrojs/starlight/components/Search.astro";
     </a>
     <a
       class="hidden w-fit transition duration-100 hover:opacity-75 lg:inline"
-      href="/contact"
+      href={mailto}
     >
       /CONTACT
     </a>
