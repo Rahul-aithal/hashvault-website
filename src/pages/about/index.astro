@@ -2,12 +2,75 @@
 import MorseCode from "../../components/MorseCode.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
 import TeamCard from "./TeamCard.astro";
+import avatar from "../../assets/background.png";
 
 const teams = [
-  { name: "Management Team", icon: "briefcase" },
-  { name: "Logistics Team", icon: "list-checks" },
-  { name: "Media Team", icon: "camera" },
-  { name: "Tech Team", icon: "desktop" },
+  {
+    name: "Management Team",
+    icon: "briefcase",
+    members: [
+      { id: "01", name: "ADITHYA", position: "LEAD", image: avatar },
+      { id: "02", name: "ADITHYA", position: "LEAD", image: avatar },
+      { id: "03", name: "ADITHYA", position: "LEAD", image: avatar },
+    ],
+  },
+  {
+    name: "Logistics Team",
+    icon: "list-checks",
+    members: [
+      { id: "01", name: "ADITHYA", position: "LEAD", image: avatar },
+      { id: "02", name: "ADITHYA", position: "LEAD", image: avatar },
+      { id: "03", name: "ADITHYA", position: "LEAD", image: avatar },
+      { id: "04", name: "ADITHYA", position: "LEAD", image: avatar },
+    ],
+  },
+  {
+    name: "Events Team",
+    icon: "calendar-heart",
+    members: [
+      { id: "01", name: "ADITHYA", position: "LEAD", image: avatar },
+      { id: "02", name: "ADITHYA", position: "LEAD", image: avatar },
+      { id: "03", name: "ADITHYA", position: "LEAD", image: avatar },
+      { id: "04", name: "ADITHYA", position: "LEAD", image: avatar },
+    ],
+  },
+  {
+    name: "Media Team",
+    icon: "camera",
+    members: [
+      { id: "01", name: "ADITHYA", position: "LEAD", image: avatar },
+      { id: "02", name: "ADITHYA", position: "LEAD", image: avatar },
+      { id: "03", name: "ADITHYA", position: "LEAD", image: avatar },
+      { id: "04", name: "ADITHYA", position: "LEAD", image: avatar },
+    ],
+  },
+  {
+    name: "Tech Team",
+    icon: "desktop",
+    members: [
+      { id: "01", name: "ADITHYA", position: "LEAD", image: avatar },
+      { id: "02", name: "ADITHYA", position: "LEAD", image: avatar },
+      { id: "03", name: "ADITHYA", position: "LEAD", image: avatar },
+    ],
+  },
+  {
+    name: "Marketing Team",
+    icon: "megaphone-simple",
+    members: [
+      { id: "01", name: "ADITHYA", position: "LEAD", image: avatar },
+      { id: "02", name: "ADITHYA", position: "LEAD", image: avatar },
+      { id: "03", name: "ADITHYA", position: "LEAD", image: avatar },
+    ],
+  },
+  {
+    name: "CTF Team",
+    icon: "flag-pennant",
+    members: [
+      { id: "01", name: "ADITHYA", position: "LEAD", image: avatar },
+      { id: "02", name: "ADITHYA", position: "LEAD", image: avatar },
+      { id: "03", name: "ADITHYA", position: "LEAD", image: avatar },
+    ],
+  },
 ];
 ---
 
@@ -136,7 +199,7 @@ const teams = [
                 <i class={`ph ph-${team.icon} text-xl text-white`} />
                 <h2>{team.name}</h2>
               </span>
-              <TeamCard />
+              <TeamCard members={team.members} />
             </div>
           ))
         }

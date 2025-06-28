@@ -1,6 +1,9 @@
 ---
 import HashFill from "./HashFill.astro";
 const mailto = "mailto:contact@hashvault.club";
+const resources = "/vault/hv-resources";
+const hallOfFame = "/vault/hv-hof";
+const ctfPlatform = "https://ctf.hashvault.club/";
 ---
 
 <nav
@@ -20,15 +23,17 @@ const mailto = "mailto:contact@hashvault.club";
       >
       <a
         class="w-fit self-end transition duration-100 hover:opacity-75"
-        href="/">/CTF-PLATFORM</a
+        href={ctfPlatform}
+        target="_blank"
+        rel="noopener noreferrer">/CTF-PLATFORM</a
       >
       <a
         class="w-fit self-start transition duration-100 hover:opacity-75"
-        href="/resources">/RESOURCES</a
+        href={resources}>/RESOURCES</a
       >
       <a
         class="w-fit transition duration-100 hover:opacity-75"
-        href="/hall-of-fame">/HALL-OF-FAME</a
+        href={hallOfFame}>/HALL-OF-FAME</a
       >
       <a
         class="w-fit self-end transition duration-100 hover:opacity-75"
@@ -78,9 +83,8 @@ const mailto = "mailto:contact@hashvault.club";
       <a href="/about" class="transition active:opacity-75">/ABOUT-US</a>
       <a href="/events" class="transition active:opacity-75">/EVENTS</a>
       <a href="/" class="transition active:opacity-75">/CTF-PLATFORM</a>
-      <a href="/resources" class="transition active:opacity-75">/RESOURCES</a>
-      <a href="/hall-of-fame" class="transition active:opacity-75"
-        >/HALL-OF-FAME</a
+      <a href={resources} class="transition active:opacity-75">/RESOURCES</a>
+      <a href={hallOfFame} class="transition active:opacity-75">/HALL-OF-FAME</a
       >
       <a href={mailto} class="transition active:opacity-75">/CONTACT</a>
     </div>
@@ -95,20 +99,20 @@ const mailto = "mailto:contact@hashvault.club";
       </div>
 
       <div
-        class="scrollbar scrollbar-thumb-transparent scrollbar-track-transparent flex snap-x gap-2 overflow-x-auto md:mx-auto md:items-center md:overflow-x-visible"
+        class="scrollbar scrollbar-thumb-transparent scrollbar-track-transparent flex snap-x gap-2 overflow-x-auto md:mx-auto md:items-center md:overflow-x-visible w-full"
       >
-        <a
+        <!-- <a
           class="bg-hash-black/30 w-full min-w-3xs snap-center backdrop-blur-xl transition duration-100 hover:scale-[99%] hover:opacity-75 md:min-w-0 xl:w-fit"
           href="/blog"
-        >
-          <div class="border-hash-purple border-2 p-2">
-            <p class="text-justify font-mono text-xs text-clip hyphens-auto">
-              Leaked Credentials Surge on Dark Web After Major Breach
+        > -->
+          <div class="border-hash-purple border-2 p-2 h-full w-full">
+            <p class="text-center font-mono text-xs text-clip hyphens-auto">
+              Coming Soon
             </p>
           </div>
-        </a>
+        <!-- </a> -->
 
-        <a
+        <!-- <a
           class="bg-hash-black/30 w-full min-w-3xs snap-center backdrop-blur-xl transition duration-100 hover:scale-[99%] hover:opacity-75 md:min-w-0 xl:w-fit"
           href="/blog"
         >
@@ -128,7 +132,7 @@ const mailto = "mailto:contact@hashvault.club";
               Zero-Day in the Wild: New Windows Exploit Surfaces
             </p>
           </div>
-        </a>
+        </a> -->
       </div>
     </div>
   </div>

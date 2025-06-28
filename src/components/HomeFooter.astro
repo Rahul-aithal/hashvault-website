@@ -2,9 +2,9 @@
 import HashFill from "./HashFill.astro";
 import Date from "./Date.astro";
 import Time from "./Time.astro";
-// import { Icon } from 'astro-icon/components';
 import Globe from "../icons/globe.svg";
 import Barcode from "./Barcode.astro";
+const bentoLink = "https://bento.me/hashvault";
 ---
 
 <div
@@ -47,7 +47,7 @@ import Barcode from "./Barcode.astro";
 
   <div class="hidden h-full items-center justify-center p-2 md:flex">
     <a
-      href="https://www.instagram.com/hashvault_bnm"
+      href={bentoLink}
       target="_blank"
       rel="noopener noreferrer"
       class="flex h-full items-center"

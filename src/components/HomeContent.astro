@@ -1,3 +1,9 @@
+---
+const getStarted = "/vault";
+const joinUs = "https://forms.gle/LkFCZuFvC6ryiiaF8";
+const openComms = "https://discord.gg/3YXya6dgxq";
+---
+
 <div
   class="border-hash-purple relative flex h-full grow flex-col justify-center overflow-hidden border-t-2 border-b-2"
 >
@@ -14,7 +20,9 @@
   >
     <a
       class="hover:bg-hash-black active:bg-hash-black/70 relative z-[1] transition-all hover:z-[2] hover:scale-[1.02] active:scale-[0.99] md:duration-100 xl:duration-200"
-      href="/join-us"
+      href={joinUs}
+      target="_blank"
+      rel="noopener noreferrer"
     >
       <div
         class="border-hash-purple hover:drop-shadow-[0px_0px_30px_theme(colors.hash-purple)] relative border-t-2 border-dashed py-6 hover:border-r-2 hover:border-solid active:border-r-0 active:drop-shadow-none md:border-b-2 md:py-[22%]"
@@ -25,7 +33,7 @@
 
     <a
       class="hover:bg-hash-black active:bg-hash-black/70 relative z-[1] transition-all hover:z-[2] hover:scale-[1.02] active:scale-[0.99] md:duration-100 xl:duration-200"
-      href="/get-started"
+      href={getStarted}
     >
       <div
         class="border-hash-purple hover:drop-shadow-[0px_0px_30px_theme(colors.hash-purple)] relative border-t-2 border-b-2 border-dashed py-6 hover:border-solid active:drop-shadow-none md:border-2 md:py-[22%]"
@@ -36,12 +44,14 @@
 
     <a
       class="hover:bg-hash-black active:bg-hash-black/70 relative z-[1] transition-all hover:z-[2] hover:scale-[1.02] active:scale-[0.99] md:duration-100 xl:duration-200"
-      href="/explore"
+      href={openComms}
+      target="_blank"
+      rel="noopener noreferrer"
     >
       <div
         class="border-hash-purple hover:drop-shadow-[0px_0px_30px_theme(colors.hash-purple)] relative border-b-2 border-dashed py-6 hover:border-l-2 hover:border-solid active:border-l-0 active:drop-shadow-none md:border-t-2 md:py-[22%]"
       >
-        EXPLORE
+        OPEN COMMS
       </div>
     </a>
   </div>
