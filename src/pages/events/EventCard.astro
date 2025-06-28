@@ -27,7 +27,7 @@ function formatToMonthDay(isoString: string): string {
         <span class="text-xs text-white/70 capitalize">{mode} Event</span>
         <div class="flex flex-row flex-wrap items-center justify-end gap-2">
           {
-            categories.map((category: string) => (
+            categories?.map((category: string) => (
               <span class="border-hash-purple/30 bg-hash-black/30 max-w-[8rem] truncate border-1 px-2 py-0.5 text-xs sm:max-w-none">
                 {category}
               </span>

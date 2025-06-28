@@ -10,7 +10,7 @@ const morseMap: Record<"." | "-" | " ", string> = {
 
 <div class="flex w-full max-w-full flex-wrap items-center justify-between">
   {
-    code.split("").map((char: string) => {
+    code.split("")?.map((char: string) => {
       const type = morseMap[char as keyof typeof morseMap];
       if (!type) return null;
 

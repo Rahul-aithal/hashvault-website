@@ -6,30 +6,30 @@ const { members } = Astro.props;
   class="border-hash-purple flex flex-wrap justify-center overflow-hidden border-1"
 >
   {
-    members.map(
-      (member: {
-        image: { src: string };
-        name: string;
-        id: string;
-        position: string;
-      }) => (
-        <div class="border-hash-purple aspect-square w-1/2 border-1 p-2 font-mono text-white sm:w-1/2 lg:w-1/4 lg:p-4">
-          <div class="flex justify-center lg:p-6">
-            <img
-              src={member.image.src}
-              alt={member.name}
-              class="aspect-square object-cover"
-            />
-          </div>
-          <div class="mt-2 flex items-end justify-between lg:mt-4">
-            <div>
-              <p class="text-xs text-white/75">({member.id})</p>
-              <p class="text-sm font-semibold">{member.name}</p>
+      members?.map(
+        (member: {
+          image: { src: string };
+          name: string;
+          id: string;
+          position: string;
+        }) => (
+          <div class="border-hash-purple aspect-square w-1/2 border-1 p-2 font-mono text-white sm:w-1/2 lg:w-1/4 lg:p-4">
+            <div class="flex justify-center lg:p-6">
+              <img
+                src={member.image.src}
+                alt={member.name}
+                class="aspect-square object-cover"
+              />
             </div>
-            <p class="text-sm">{member.position}</p>
+            <div class="mt-2 flex items-end justify-between lg:mt-4">
+              <div>
+                <p class="text-xs text-white/75">({member.id})</p>
+                <p class="text-sm font-semibold">{member.name}</p>
+              </div>
+              <p class="text-sm">{member.position}</p>
+            </div>
           </div>
-        </div>
-      ),
-    )
+        ),
+      )
   }
 </div>
