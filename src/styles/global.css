@@ -30,6 +30,7 @@ html {
   --sl-sidebar-width: 20rem;
 
   --sl-content-width: 56rem;
+  --pagefind-ui-border-radius: none;
 }
 
 @layer utilities {
