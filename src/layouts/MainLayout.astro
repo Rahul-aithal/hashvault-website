@@ -3,6 +3,9 @@ import "../styles/global.css";
 import "@fontsource/archivo-black";
 import "@fontsource-variable/geist-mono";
 const mailto = "mailto:contact@hashvault.club";
+const resources = "/vault/hv-resources";
+const hallOfFame = "/vault/hv-hof";
+const ctfPlatform = "https://ctf.hashvault.club/";
 ---
 
 <!doctype html>
@@ -79,13 +82,13 @@ const mailto = "mailto:contact@hashvault.club";
         >
           <a href="/about" class="transition active:opacity-75">/ABOUT-US</a>
           <a href="/events" class="transition active:opacity-75">/EVENTS</a>
-          <a href="/departments" class="transition active:opacity-75"
-            >/DEPARTMENTS</a
+          <a href={ctfPlatform} class="transition active:opacity-75"
+            >/CTF-PLATFORM</a
           >
-          <a href="/resources" class="transition active:opacity-75"
+          <a href={resources} class="transition active:opacity-75"
             >/RESOURCES</a
           >
-          <a href="/hall-of-fame" class="transition active:opacity-75"
+          <a href={hallOfFame} class="transition active:opacity-75"
             >/HALL-OF-FAME</a
           >
           <a href={mailto} class="transition active:opacity-75">/CONTACT</a>
