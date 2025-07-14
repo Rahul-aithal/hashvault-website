@@ -2,6 +2,8 @@
 import "../styles/global.css";
 import "@fontsource/archivo-black";
 import "@fontsource-variable/geist-mono";
+import { Image } from "astro:assets";
+import background from "@/assets/background.avif"
 ---
 
 <!doctype html>
@@ -20,9 +22,17 @@ import "@fontsource-variable/geist-mono";
     <title>Hashvault</title>
   </head>
   <body
-    class="bg-hash-black h-full bg-[url('../assets/background.avif')] bg-cover bg-center bg-no-repeat p-2 text-white lg:min-h-screen xl:p-4"
+    class="bg-hash-black relative h-full p-2 text-white lg:min-h-screen xl:p-4"
     style="min-height: 100dvh;"
   >
+    <!-- Background image -->
+    <Image
+      src={background}
+      alt="background"
+      class="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover"
+    />
+
+    <!-- Content container -->
     <div class="border-hash-purple flex min-h-full flex-col border-2">
       <slot />
     </div>
