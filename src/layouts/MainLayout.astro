@@ -15,6 +15,7 @@ const ctfPlatform = "https://ctf.hashvault.club/";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#0d0b0e" />
     <title>Hashvault</title>
     <link
       rel="stylesheet"
@@ -78,15 +79,14 @@ const ctfPlatform = "https://ctf.hashvault.club/";
           x-transition:leave="transition ease-in duration-100"
           x-transition:leave-start="opacity-100 translate-y-0"
           x-transition:leave-end="opacity-0 translate-y-1"
-          class="bg-hash-black/80 outline-hash-purple absolute top-full flex w-full flex-col items-start gap-2 border-t-0 px-3 py-2 outline-2 backdrop-blur-md"
+          class="bg-hash-black outline-hash-purple absolute top-full flex w-full flex-col items-start gap-2 border-t-0 px-3 py-2 outline-2 backdrop-blur-md"
         >
           <a href="/about" class="transition active:opacity-75">/ABOUT-US</a>
           <a href="/events" class="transition active:opacity-75">/EVENTS</a>
           <a href={ctfPlatform} class="transition active:opacity-75"
             >/CTF-PLATFORM</a
           >
-          <a href={resources} class="transition active:opacity-75"
-            >/RESOURCES</a
+          <a href={resources} class="transition active:opacity-75">/RESOURCES</a
           >
           <a href={hallOfFame} class="transition active:opacity-75"
             >/HALL-OF-FAME</a
@@ -98,7 +98,7 @@ const ctfPlatform = "https://ctf.hashvault.club/";
 
     <div class="border-hash-purple border-t-0 xl:border-2">
       <slot />
-      <div class="px-12 pb-6 text-center text-xs text-white/70">
+      <div class="my-4 px-12 text-center text-xs text-white/70 lg:my-0 lg:pb-6">
         Developed by <a
           href="https://github.com/Ariaryy"
           target="_blank"

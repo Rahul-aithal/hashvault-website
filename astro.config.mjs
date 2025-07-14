@@ -13,7 +13,10 @@ import starlight from "@astrojs/starlight";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://hashvault.club',
+  devToolbar: {
+    enabled: false,
+  },
+  site: "https://hashvault.club",
   integrations: [
     alpinejs(),
     markdoc(),

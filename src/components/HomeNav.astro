@@ -78,11 +78,13 @@ const ctfPlatform = "https://ctf.hashvault.club/";
       x-transition:leave="transition ease-in duration-100"
       x-transition:leave-start="opacity-100 translate-y-0"
       x-transition:leave-end="opacity-0 translate-y-1"
-      class="bg-hash-black/80 border-hash-purple absolute top-full flex w-full flex-col items-start gap-2 border-b-2 px-3 py-4 backdrop-blur-md"
+      class="bg-hash-black border-hash-purple absolute top-full flex w-full flex-col items-start gap-2 border-b-2 px-3 py-4 backdrop-blur-md"
     >
       <a href="/about" class="transition active:opacity-75">/ABOUT-US</a>
       <a href="/events" class="transition active:opacity-75">/EVENTS</a>
-      <a href={ctfPlatform} class="transition active:opacity-75">/CTF-PLATFORM</a>
+      <a href={ctfPlatform} class="transition active:opacity-75"
+        >/CTF-PLATFORM</a
+      >
       <a href={resources} class="transition active:opacity-75">/RESOURCES</a>
       <a href={hallOfFame} class="transition active:opacity-75">/HALL-OF-FAME</a
       >
@@ -99,17 +101,17 @@ const ctfPlatform = "https://ctf.hashvault.club/";
       </div>
 
       <div
-        class="scrollbar scrollbar-thumb-transparent scrollbar-track-transparent flex snap-x gap-2 overflow-x-auto md:mx-auto md:items-center md:overflow-x-visible w-full"
+        class="scrollbar scrollbar-thumb-transparent scrollbar-track-transparent flex w-full snap-x gap-2 overflow-x-auto md:mx-auto md:items-center md:overflow-x-visible"
       >
         <!-- <a
           class="bg-hash-black/30 w-full min-w-3xs snap-center backdrop-blur-xl transition duration-100 hover:scale-[99%] hover:opacity-75 md:min-w-0 xl:w-fit"
           href="/blog"
         > -->
-          <div class="border-hash-purple border-2 p-2 h-full w-full">
-            <p class="text-center font-mono text-xs text-clip hyphens-auto">
-              Coming Soon
-            </p>
-          </div>
+        <div class="border-hash-purple h-full w-full border-2 p-2">
+          <p class="text-center font-mono text-xs text-clip hyphens-auto">
+            Coming Soon
+          </p>
+        </div>
         <!-- </a> -->
 
         <!-- <a

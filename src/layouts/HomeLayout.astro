@@ -11,6 +11,7 @@ import "@fontsource-variable/geist-mono";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#0d0b0e" />
     <link
       rel="stylesheet"
       type="text/css"
@@ -19,7 +20,8 @@ import "@fontsource-variable/geist-mono";
     <title>Hashvault</title>
   </head>
   <body
-    class="h-full min-h-screen bg-[url('../assets/background.png')] bg-cover bg-center bg-no-repeat p-2 text-white xl:p-4"
+    class="bg-hash-black h-full bg-[url('../assets/background.avif')] bg-cover bg-center bg-no-repeat p-2 text-white lg:min-h-screen xl:p-4"
+    style="min-height: 100dvh;"
   >
     <div class="border-hash-purple flex min-h-full flex-col border-2">
       <slot />
