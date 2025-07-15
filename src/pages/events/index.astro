@@ -2,6 +2,8 @@
 import MainLayout from "../../layouts/MainLayout.astro";
 import EventCard from "../../components/EventCard.astro";
 
+import bgImage from "@/assets/camera.avif"
+
 const events = [
   {
     id: "1",
@@ -10,7 +12,7 @@ const events = [
     categories: ["Pwn", "Reversing", "Crypto"],
     start: "2025-07-01T10:00:00Z",
     end: "2025-07-03T22:00:00Z",
-    image: "../../src/assets/camera.avif",
+    image: bgImage,
   },
   {
     id: "2",
@@ -19,7 +21,7 @@ const events = [
     categories: ["Web", "Forensics", "OSINT"],
     start: "2025-07-05T08:00:00Z",
     end: "2025-07-07T20:00:00Z",
-    image: "../../src/assets/lock.avif",
+    image: bgImage,
   },
   {
     id: "3",
@@ -28,7 +30,7 @@ const events = [
     categories: ["Crypto", "Misc", "Hardware"],
     start: "2025-07-10T14:00:00Z",
     end: "2025-07-12T18:00:00Z",
-    image: "../../src/assets/camera.avif",
+    image: bgImage,
   },
 ];
 ---
@@ -46,7 +48,7 @@ const events = [
               categories={event.categories}
               start={event.start}
               end={event.end}
-              backgroundImageUrl={event.image}
+              backgroundImage={event.image}
             />
           ))
         }
