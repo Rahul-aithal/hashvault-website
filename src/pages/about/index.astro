@@ -2,6 +2,9 @@
 import MorseCode from "../../components/MorseCode.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
 import TeamCard from "../../components/TeamCard.astro";
+import CameraBackground from "@/assets/camera.png";
+import LockBackground from "@/assets/lock.png";
+import { Image } from "astro:assets";
 
 // Management Team
 import adithya from "@avatars/adithya.avif";
@@ -33,7 +36,7 @@ import abhiram from "@avatars/abhiram.avif";
 // Marketing Team
 import sakshi from "@avatars/sakshi.png";
 import jessica from "@avatars/jessica.avif";
-import samiksha from "@avatars/samiksha.png"
+import samiksha from "@avatars/samiksha.png";
 
 // CTF Team
 import sagar from "@avatars/sagar.png";
@@ -214,11 +217,17 @@ const teams = [
       WHO WE ARE
     </h1>
 
-    <div class="relative h-[20rem]">
-      <!-- Background + Overlay -->
-      <div
-        class="absolute inset-0 z-0 bg-[url('../assets/camera.avif')] bg-cover bg-no-repeat lg:bg-[center_top_-25rem]"
-      >
+    <div class="relative h-[20rem] overflow-hidden">
+      <!-- Background Image and Overlay -->
+      <div class="absolute inset-0 z-0">
+        <div class="relative h-full w-full">
+          <Image
+            src={CameraBackground}
+            alt="Camera Background"
+            format="avif"
+            class="h-full w-full object-cover object-[0px_23%]"
+          />
+        </div>
         <div class="bg-hash-purple/10 absolute inset-0 backdrop-brightness-90">
         </div>
       </div>
@@ -352,9 +361,15 @@ const teams = [
 
     <div class="relative h-[20rem]">
       <!-- Background + Overlay -->
-      <div
-        class="absolute inset-0 z-0 bg-[url('../assets/lock.avif')] bg-cover bg-no-repeat lg:bg-[center_top_-25rem]"
-      >
+      <div class="absolute inset-0 z-0">
+        <div class="relative h-full w-full">
+          <Image
+            src={LockBackground}
+            alt="Lock Background"
+            format="avif"
+            class="h-full w-full object-cover"
+          />
+        </div>
         <div class="bg-hash-purple/10 absolute inset-0 backdrop-brightness-90">
         </div>
       </div>
