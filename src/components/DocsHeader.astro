@@ -6,12 +6,12 @@ const mailto = "mailto:contact@hashvault.club";
 <div
   class="header flex w-full items-center justify-between gap-[var(--sl-nav-gap)]"
 >
-  <!-- Left Nav -->
+  {/* Left Nav */}
   <ul class="font-brutal flex items-center gap-12 font-black text-white">
     <a class="w-fit transition duration-100 hover:opacity-75" href="/">
       /HOME
     </a>
-    <!-- Only show these links on desktop -->
+    {/* Only show these links on desktop */}
     <a
       class="hidden w-fit transition duration-100 hover:opacity-75 lg:inline"
       href="/about"
@@ -26,15 +26,15 @@ const mailto = "mailto:contact@hashvault.club";
     </a>
   </ul>
 
-  <!-- Right Side Search -->
-  <!-- Mobile: just icon, Desktop: full -->
+  {/* Right Side Search */}
+  {/* Mobile: just icon, Desktop: full */}
   <div class="print:hidden">
-    <!-- Hide full search bar on mobile -->
+    {/* Hide full search bar on mobile */}
     <Search />
-    <!-- Show icon-only on small screens (assuming the Search component supports compact view or has an accessible trigger button) -->
-    <!-- <div class="flex items-center justify-center md:hidden">
+    {/* Show icon-only on small screens (assuming the Search component supports compact view or has an accessible trigger button) */}
+    {/* <div class="flex items-center justify-center md:hidden">
       <Search />
-    </div> -->
+    </div> */}
   </div>
 </div>
 
