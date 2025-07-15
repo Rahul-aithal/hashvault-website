@@ -3,7 +3,7 @@ import "../styles/global.css";
 import "@fontsource/archivo-black";
 import "@fontsource-variable/geist-mono";
 import { Image } from "astro:assets";
-import background from "@/assets/background.avif"
+import background from "@/assets/background.png"
 ---
 
 <!doctype html>
@@ -27,6 +27,8 @@ import background from "@/assets/background.avif"
   >
     <!-- Background image -->
     <Image
+      quality={"high"}
+      format="avif"
       src={background}
       alt="background"
       class="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover"

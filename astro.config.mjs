@@ -22,6 +22,7 @@ export default defineConfig({
     markdoc(),
     starlight({
       title: "HASHVAULT",
+      favicon: '/favicon.ico',
       disable404Route: true,
       components: {
         Header: "./src/components/DocsHeader.astro",
