@@ -17,10 +17,10 @@ export default defineConfig({
   site: "https://hashvault.club",
   integrations: [
     alpinejs(),
-    markdoc(),
+    markdoc({ allowHTML: true }),
     starlight({
       title: "HASHVAULT",
-      favicon: '/favicon.ico',
+      favicon: "/favicon.ico",
       disable404Route: true,
       components: {
         Header: "./src/components/DocsHeader.astro",
