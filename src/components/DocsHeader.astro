@@ -1,0 +1,110 @@
+---
+import Search from "@astrojs/starlight/components/Search.astro";
+const mailto = "mailto:contact@hashvault.club";
+---
+
+<div
+  class="header flex w-full items-center justify-between gap-[var(--sl-nav-gap)]"
+>
+  {/* Left Nav */}
+  <ul class="font-brutal flex items-center gap-12 font-black text-white">
+    <a class="w-fit transition duration-100 hover:opacity-75" href="/">
+      /HOME
+    </a>
+    {/* Only show these links on desktop */}
+    <a
+      class="hidden w-fit transition duration-100 hover:opacity-75 lg:inline"
+      href="/about"
+    >
+      /ABOUT-US
+    </a>
+    <a
+      class="hidden w-fit transition duration-100 hover:opacity-75 lg:inline"
+      href={mailto}
+    >
+      /CONTACT
+    </a>
+  </ul>
+
+  {/* Right Side Search */}
+  {/* Mobile: just icon, Desktop: full */}
+  <div class="print:hidden">
+    {/* Hide full search bar on mobile */}
+    <Search />
+    {/* Show icon-only on small screens (assuming the Search component supports compact view or has an accessible trigger button) */}
+    {/* <div class="flex items-center justify-center md:hidden">
+      <Search />
+    </div> */}
+  </div>
+</div>
+
+<style>
+  @layer starlight.core {
+    .header {
+      display: flex;
+      gap: var(--sl-nav-gap);
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+    }
+
+    .title-wrapper {
+      /* Prevent long titles overflowing and covering the search and menu buttons on narrow viewports. */
+      overflow: clip;
+      /* Avoid clipping focus ring around link inside title wrapper. */
+      padding: 0.25rem;
+      margin: -0.25rem;
+      min-width: 0;
+    }
+
+    .right-group,
+    .social-icons {
+      gap: 1rem;
+      align-items: center;
+    }
+    .social-icons::after {
+      content: "";
+      height: 2rem;
+      border-inline-end: 1px solid var(--sl-color-gray-5);
+    }
+
+    @media (min-width: 50rem) {
+      :global(:root[data-has-sidebar]) {
+        --__sidebar-pad: calc(2 * var(--sl-nav-pad-x));
+      }
+      :global(:root:not([data-has-toc])) {
+        --__toc-width: 0rem;
+      }
+      .header {
+        --__sidebar-width: max(
+          0rem,
+          var(--sl-content-inline-start, 0rem) - var(--sl-nav-pad-x)
+        );
+        --__main-column-fr: calc(
+          (
+              100% + var(--__sidebar-pad, 0rem) -
+                var(--__toc-width, var(--sl-sidebar-width)) -
+                (2 * var(--__toc-width, var(--sl-nav-pad-x))) -
+                var(--sl-content-inline-start, 0rem) - var(--sl-content-width)
+            ) /
+            2
+        );
+        display: grid;
+        grid-template-columns:
+        /* 1 (site title): runs up until the main content column’s left edge or the width of the title, whichever is the largest  */
+          minmax(
+            calc(
+              var(--__sidebar-width) +
+                max(0rem, var(--__main-column-fr) - var(--sl-nav-gap))
+            ),
+            auto
+          )
+          /* 2 (search box): all free space that is available. */
+          1fr
+          /* 3 (right items): use the space that these need. */
+          auto;
+        align-content: center;
+      }
+    }
+  }
+</style>
