@@ -14,24 +14,24 @@ export default defineConfig({
   devToolbar: {
     enabled: false,
   },
-  site: "https://hashvault.club",
+  site: "https://end.hashvault.club",
   integrations: [
-    alpinejs(),
-    markdoc({ allowHTML: true }),
-    starlight({
-      title: "HASHVAULT",
-      favicon: "/favicon.ico",
-      disable404Route: true,
-      components: {
-        Header: "./src/components/DocsHeader.astro",
-        ThemeProvider: "./src/components/ForceDarkTheme.astro",
-        ThemeSelect: "./src/components/EmptyComponent.astro",
-      },
-      customCss: [
-        "./src/styles/global.css",
-        "@fontsource/archivo-black/400.css",
-      ],
-    }),
+    // alpinejs(),
+    // markdoc({ allowHTML: true }),
+    // starlight({
+    //   title: "HASHVAULT",
+    //   favicon: "/favicon.ico",
+    //   disable404Route: true,
+    //   components: {
+    //     Header: "./src/components/DocsHeader.astro",
+    //     ThemeProvider: "./src/components/ForceDarkTheme.astro",
+    //     ThemeSelect: "./src/components/EmptyComponent.astro",
+    //   },
+    //   customCss: [
+    //     "./src/styles/global.css",
+    //     "@fontsource/archivo-black/400.css",
+    //   ],
+    // }),
   ],
   vite: {
     plugins: [tailwindcss()],
